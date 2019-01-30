@@ -1,3 +1,18 @@
+h1 {
+  text-align: center;
+  margin: 0.67em 0 !important;
+  font-weight: 300;
+}
+
+/* NAVBAR */
+
+.dropdown-item.disabled-item, .nav-link.disabled-item {
+  color: #6c757d50;
+  background-color: transparent;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* FOOTER */
 
 .footer { /* Commenting out sticky until needed because of background colour bug */
@@ -341,7 +356,7 @@
   }
 }
 
-/* THE ICST 2017 IN IMAGES AND WORDS */
+/* THE ICST 2019 IN IMAGES AND WORDS */
 
 /* TEXT */
 
