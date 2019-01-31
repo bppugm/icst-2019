@@ -73,8 +73,8 @@ h1 {
 .social-media-row {
   background-color: rgba(222, 221, 219, 0.7) !important;
   border-top: 1px solid rgba(217, 216, 214, 0.7);
-  margin-right: -16px;
-  margin-left: -16px;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 .social-media-row a {
@@ -322,6 +322,7 @@ h1 {
   .nav-register {
     position: absolute;
     right: 5.5rem;
+    top: 0.6rem;
     padding: 0.55rem 1rem;
   }
 }
