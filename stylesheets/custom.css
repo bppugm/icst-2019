@@ -9,6 +9,18 @@ h1 {
   min-height: 400px;
 }
 
+.nav-pills .nav-link.active {
+  color: #fff !important;
+}
+
+code {
+  padding: 0.2rem 0.4rem;
+  font-size: 90%;
+  color: #3c74ac;
+  background-color: #f7f7f9;
+  border-radius: 0.25rem;
+}
+
 /* NAVBAR */
 
 .dropdown-item.disabled-item,
