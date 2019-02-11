@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="UTF-8">
+	<meta name="robots" content="none">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="https://edas.info/icon/favicon.ico">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+	<link rel="stylesheet" href="https://edas.info/css/progress.css" type="text/css">
+	<link rel="stylesheet" href="https://edas.info/css/menu1.css" type="text/css">
+	<link rel="stylesheet" href="https://edas.info/css/form.css" type="text/css">
+	<link rel="stylesheet" href="https://edas.info/css/jquery-ui.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://edas.info/css/edas.css" type="text/css">
+	<link rel="stylesheet" href="../../../fonts/font-awesome/css/font-awesome.css" type="text/css"> <style>
+	#cssmenu .active a, #cssmenu li:hover > a > a {
+	  -webkit-box-shadow: none;
+	  background: none;
+	  border-bottom: solid 2px #fd8100;
+	  border-top: none;
+	  box-shadow: none;
+	  color: #fd8100;
+	  text-shadow: none;
+  }
+  
+  #cssmenu a, #cssmenu a:link {
+	  border-radius: 0px;
+	  color: #073c64;
+	  display: block;
+	  font-family: montserrat;
+	  font-size: 13px;
+	  font-weight: normal;
+	  margin: 0;
+	  padding: 15px 15px;
+	  text-decoration: none;
+	  text-shadow: none;
+	  text-transform: uppercase;
+  }
+  
+  #cssmenu li:hover > a {
+	  -webkit-box-shadow: none;
+	  background: none;
+	  border-bottom: solid 2px #fd8100;
+	  border-top: none;
+	  box-shadow: none;
+	  color: #fd8100;
+	  text-shadow: none;
+  }
+  
+  #cssmenu ul {
+	  -webkit-box-shadow: none;
+	  background: #f0f0f0;
+	  border-style: none;
+  }
+  
+  #header {
+	  background-color: #f0f0f0;
+	  border-style: none;
+  }
+  
+  #login-box {
+	  background-color: #f0f0f0;
+	  border: none;
+	  box-shadow: none;
+	  margin-left: 0;
+  }
+  
+  #main {
+	  background: #ffffff;
+	  background-color: #f0f0f0;
+	  border: none;
+	  border-radius: 0px;
+	  clear: both;
+	  margin-left: auto;
+	  margin-right: auto;
+	  margin-top: 1em;
+	  padding: 1em;
+	  position: relative;
+	  width: 90%;
+  }
+  
+  #main h3 {
+	  font-weight: bold;
+  }
+  
+  #main p {
+	  font-family: open sans;
+	  font-size: 10pt;
+  }
+  
+  .danger {
+	  background-color: #f8d7da;
+	  border-bottom: 0px;
+	  border-top: 0px;
+	  color: #721c24;
+  }
+  
+  .info {
+	  background-color: #d1ecf1;
+	  border-bottom: 0px;
+	  border-top: 0px;
+	  color: #0c5460;
+  }
+  
+  .info, .success, .warning, .failure, .error, .bug {
+	  border-radius: 5px;
+	  margin: 10px 0px;
+	  padding: 0px;
+  }
+  
+  .milestone-late {
+	  background-color: #f8d7da;
+	  color: #721c24;
+  }
+  
+  .milestone-moot {
+	  background-color: #e2e3e5;
+	  color: #383d41;
+  }
+  
+  .notes {
+	  font-family: open sans;
+	  font-size: 8pt;
+  }
+  
+  .notes.event-active {
+	  background-color: #d4edda;
+	  color: #155724;
+  }
+  
+  .notes.event-inactive {
+	  background-color: #f8d7da;
+	  color: #721c24;
+  }
+  
+  .success {
+	  background-color: #d4edda;
+	  border-bottom: 0px;
+	  border-top: 0px;
+	  color: #155724;
+  }
+  
+  .template-default, .template-default a {
+	  background-color: #e2e3e5;
+	  color: #383d41;
+  }
+  
+  .template-defined, .template-defined a {
+	  background-color: #d4edda;
+	  color: #155724;
+  }
+  
+  .warning {
+	  background-color: #fcf8e3;
+	  border-bottom: 0px;
+	  border-top: 0px;
+	  color: #856404;
+  }
+  
+  a {
+	  color: #fd8100;
+  }
+  
+  a.pure-menu-link {
+	  font-family: montserrat;
+	  text-transform: uppercase;
+  }
+  
+  a.ui-tabs-anchor {
+	  background-color: #c5c5c5;
+	  border-style: none;
+	  color: #000;
+	  font-family: montserrat;
+	  font-size: 10;
+	  text-transform: uppercase;
+  }
+  
+  a.ui-tabs-anchor:hover, a.ui-tabs-active {
+	  background-color: #fdcb2c;
+	  border-style: none;
+	  color: #fff;
+	  cursor: pointer;
+  }
+  
+  div.footer {
+	  display: none;
+  }
+  
+  div.pure-menu.pure-menu-horizontal {
+	  background-color: #e6e6e6;
+	  box-shadow: none;
+  }
+  
+  h3.sessiontime {
+	  font-size: 12pt;
+  }
+  
+  h4.sessionday {
+	  background-color: #149fc0
+  ;
+	  font-family: montserrat;
+	  font-size: 12pt;
+	  font-weight: bold;
+	  text-align: center;
+	  text-transform: uppercase;
+  }
+  
+  h4.sessiontitle {
+	  font-size: 10pt;
+	  text-transform: uppercase;
+  }
+  
+  html.gr__edas_info {
+	  background-color: #f0f0f0;
+  }
+  
+  html.gr__edas_info body {
+	  background: #f0f0f0;
+  }
+  
+  input[type=button], input[type=submit], input[type="file"] {
+	  background-color: #007bff;
+	  border-radius: 5px;
+	  color: #fff;
+	  font-family: montserrat;
+	  text-transform: uppercase;
+  }
+  
+  li.has-sub.active a {
+	  border-style: none;
+  }
+  
+  span.logo {
+	  display: none;
+  }
+  
+  span.notes {
+	  font-size: 10pt;
+  }
+  
+  td.heading {
+	  background-color: #cce5ff;
+	  color: #004085;
+	  font-family: open sans;
+	  font-size: 10pt;
+  }
+  
+  td.sessionday {
+	  background-color: #149fc0;
+	  padding-top: 0;
+  }
+  
+  td.track-closed {
+	  background-color: #f8d7da;
+	  color: #721c24;
+  }
+  
+  td.track-closed a {
+	  color: #000000;
+  }
+  
+  th.heading {
+	  background-color: #cce5ff;
+	  color: #004085;
+	  font-family: open sans;
+	  font-size: 10pt;
+  }
+  
+  th.heading-small {
+	  background-color: #cce5ff;
+	  color: #004085;
+	  font-family: open sans;
+	  font-size: 10pt;
+  }
+  
+  th.sorting {
+	  background-color: #cce5ff;
+	  color: #004085;
+	  font-size: 10;
+  }
+  
+  th.sorting_asc {
+	  background-color: #cce5ff;
+	  color: #004085;
+  }
+  
+  th.sorting_disabled {
+	  background-color: #cce5ff;
+	  color: #004085;
+  }
+  
+  tr td input {
+	  box-shadow: none;
+  }
+  
+  tr.even td {
+	  font-family: open sans;
+	  padding-bottom: 5px;
+	  padding-top: 5px;
+  }
+  
+  tr.even td a {
+	  color: #000;
+	  text-decoration: overline;
+  }
+  
+  tr.milestone-completed td {
+	  padding-bottom: 5px;
+	  padding-top: 5px;
+  }
+  
+  tr.milestone-completed td a {
+	  color: #000000;
+	  text-decoration: overline;
+  }
+  
+  tr.milestone-late td {
+	  padding-bottom: 5px;
+	  padding-top: 5px;
+  }
+  
+  tr.milestone-late td a {
+	  color: #000000;
+	  text-decoration: overline;
+  }
+  
+  tr.milestone-moot td {
+	  padding-bottom: 5px;
+	  padding-top: 5px;
+  }
+  
+  tr.milestone-moot td a {
+	  color: #000000;
+	  text-decoration: overline;
+  }
+  
+  tr.milestone-not_applicable {
+	  background-color: #fefefe;
+	  color: #818182;
+  }
+  
+  tr.milestone-not_applicable td {
+	  padding-bottom: 5px;
+	  padding-top: 5px;
+  }
+  
+  tr.milestone-not_applicable td a {
+	  color: #000000;
+	  text-decoration: overline;
+  }
+  
+  tr.odd td {
+	  background-color: #f8f7fd;
+	  font-family: open sans;
+	  padding-bottom: 5px;
+	  padding-top: 5px;
+  }
+  
+  tr.odd td a {
+	  color: #000;
+	  text-decoration: overline;
+  }
+  
+  tr.tpc-accepted td {
+	  background-color: #d4edda;
+  }
+  
+  ul.breadcrumbs {
+	  display: none;
+  }
+  
+  ul.ui-tabs-nav.ui-corner-all.ui-helper-reset.ui-helper-clearfix.ui-widget-header {
+	  background-color: #c5c5c5;
+  }
+	</style>
+  
+	<link rel="alternate" type="application/rss+xml" href="rssConferences.php" title="RSS feed for conferences">
+  <title>Create new account [ICST UGM 2019] </title>
+   </script>
+   <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS_CHTML"></script>
+   </head><style type="text/css" id="stylebot-css">#cssmenu .active a, #cssmenu li:hover > a > a {-webkit-box-shadow: none !important;background: none !important;border-bottom: solid 2px #fd8100 !important;border-top: none !important;box-shadow: none !important;color: #fd8100 !important;text-shadow: none !important;}#cssmenu a, #cssmenu a:link {border-radius: 0px !important;color: #073c64 !important;display: block !important;font-family: montserrat !important;font-size: 13px !important;font-weight: normal !important;margin: 0 !important;padding: 15px 15px !important;text-decoration: none !important;text-shadow: none !important;text-transform: uppercase !important;}#cssmenu li:hover > a {-webkit-box-shadow: none !important;background: none !important;border-bottom: solid 2px #fd8100 !important;border-top: none !important;box-shadow: none !important;color: #fd8100 !important;text-shadow: none !important;}#cssmenu ul {-webkit-box-shadow: none !important;background: #f0f0f0 !important;border-style: none !important;}#header {background-color: #f0f0f0 !important;border-style: none !important;}#login-box {background-color: #f0f0f0 !important;border: none !important;box-shadow: none !important;margin-left: 0 !important;}#main {background: #ffffff !important;background-color: #f0f0f0 !important;border: none !important;border-radius: 0px !important;clear: both !important;margin-left: auto !important;margin-right: auto !important;margin-top: 1em !important;padding: 1em !important;position: relative !important;width: 90% !important;}#main h3 {font-weight: bold !important;}#main p {font-family: open sans !important;font-size: 10pt !important;}.danger {background-color: #f8d7da !important;border-bottom: 0px !important;border-top: 0px !important;color: #721c24 !important;}.info {background-color: #d1ecf1 !important;border-bottom: 0px !important;border-top: 0px !important;color: #0c5460 !important;}.info, .success, .warning, .failure, .error, .bug {border-radius: 5px !important;margin: 10px 0px !important;padding: 0px !important;}.milestone-late {background-color: #f8d7da !important;color: #721c24 !important;}.milestone-moot {background-color: #e2e3e5 !important;color: #383d41 !important;}.notes {font-family: open sans !important;font-size: 8pt !important;}.notes.event-active {background-color: #d4edda !important;color: #155724 !important;}.notes.event-inactive {background-color: #f8d7da !important;color: #721c24 !important;}.success {background-color: #d4edda !important;border-bottom: 0px !important;border-top: 0px !important;color: #155724 !important;}.template-default, .template-default a {background-color: #e2e3e5 !important;color: #383d41 !important;}.template-defined, .template-defined a {background-color: #d4edda !important;color: #155724 !important;}.warning {background-color: #fcf8e3 !important;border-bottom: 0px !important;border-top: 0px !important;color: #856404 !important;}a {color: #fd8100 !important;}a.pure-menu-link {font-family: montserrat !important;text-transform: uppercase !important;}a.ui-tabs-anchor {background-color: #c5c5c5 !important;border-style: none !important;color: #000 !important;font-family: montserrat !important;font-size: 10 !important;text-transform: uppercase !important;}a.ui-tabs-anchor:hover, a.ui-tabs-active {background-color: #fdcb2c !important;border-style: none !important;color: #fff !important;cursor: pointer !important;}div.footer {display: none !important;}div.pure-menu.pure-menu-horizontal {background-color: #e6e6e6 !important;box-shadow: none !important;}h3.sessiontime {font-size: 12pt !important;}h4.sessionday {background-color: #149fc0
+   !important;font-family: montserrat !important;font-size: 12pt !important;font-weight: bold !important;text-align: center !important;text-transform: uppercase !important;}h4.sessiontitle {font-size: 10pt !important;text-transform: uppercase !important;}html.gr__edas_info {background-color: #f0f0f0 !important;}html.gr__edas_info body {background: #f0f0f0 !important;}input[type=button], input[type=submit], input[type="file"] {background-color: #007bff !important;border-radius: 5px !important;color: #fff !important;font-family: montserrat !important;text-transform: uppercase !important;}li.has-sub.active a {border-style: none !important;}span.logo {display: none !important;}span.notes {font-size: 10pt !important;}td.heading {background-color: #cce5ff !important;color: #004085 !important;font-family: open sans !important;font-size: 10pt !important;}td.sessionday {background-color: #149fc0 !important;padding-top: 0 !important;}td.track-closed {background-color: #f8d7da !important;color: #721c24 !important;}td.track-closed a {color: #000000 !important;}th.heading {background-color: #cce5ff !important;color: #004085 !important;font-family: open sans !important;font-size: 10pt !important;}th.heading-small {background-color: #cce5ff !important;color: #004085 !important;font-family: open sans !important;font-size: 10pt !important;}th.sorting {background-color: #cce5ff !important;color: #004085 !important;font-size: 10 !important;}th.sorting_asc {background-color: #cce5ff !important;color: #004085 !important;}th.sorting_disabled {background-color: #cce5ff !important;color: #004085 !important;}tr td input {box-shadow: none !important;}tr.even td {font-family: open sans !important;padding-bottom: 5px !important;padding-top: 5px !important;}tr.even td a {color: #000 !important;text-decoration: overline !important;}tr.milestone-completed td {padding-bottom: 5px !important;padding-top: 5px !important;}tr.milestone-completed td a {color: #000000 !important;text-decoration: overline !important;}tr.milestone-late td {padding-bottom: 5px !important;padding-top: 5px !important;}tr.milestone-late td a {color: #000000 !important;text-decoration: overline !important;}tr.milestone-moot td {padding-bottom: 5px !important;padding-top: 5px !important;}tr.milestone-moot td a {color: #000000 !important;text-decoration: overline !important;}tr.milestone-not_applicable {background-color: #fefefe !important;color: #818182 !important;}tr.milestone-not_applicable td {padding-bottom: 5px !important;padding-top: 5px !important;}tr.milestone-not_applicable td a {color: #000000 !important;text-decoration: overline !important;}tr.odd td {background-color: #f8f7fd !important;font-family: open sans !important;padding-bottom: 5px !important;padding-top: 5px !important;}tr.odd td a {color: #000 !important;text-decoration: overline !important;}tr.tpc-accepted td {background-color: #d4edda !important;}ul.breadcrumbs {display: none !important;}ul.ui-tabs-nav.ui-corner-all.ui-helper-reset.ui-helper-clearfix.ui-widget-header {background-color: #c5c5c5 !important;}</style>
+  <body><div id="MathJax_Message" style="display: none;"></div>
+  <div id="main">
+  <h3>Create new account</h3><div class="pageheader"></div>
+<p>Checking email address by contacting the email.co. email server. This may take several minutes if the person's email server is slow. Do not resubmit request.
+  <br>
+	  Resolving MTA email-co.olc.protection.email.co
+  <br>Trying 123.45.67.89
+  <br>lorem.ip@email.co verified with sender bounce@edas.info</p>
+  
+  
+  
+  <div class="warning"><span class="notice-symbol fa fa-exclamation-triangle fa-2x"></span><span class="notice-text">For security reasons and to allow conflict-of-interest checking, anonymous email domains are discouraged. Please use a company, university, ACM or IEEE email address. If that is not possible, contact EDAS help.</span></div>
+  <div class="success"><span class="notice-symbol fa fa-check fa-2x"></span><span class="notice-text">Instructions for setting up the password were mailed to lorem.ip@email.co. Once you receive it and create your password, you can <a>login</a>.</span></div>
+  </div>
+  <div class="footer" id="footer">
+  <a title="EDAS documentation" href="https://edas.info/doc">EDAS</a> at 172.30.0.206 (<a title="Current time in different time zone" target="_self" href="time.php">Tue, 12 Feb 2019 02:49:24 +0700 WIB</a>) [User  using Win10:Chrome 71.0 cached 0.009/0.027 s]
+   <a title="Request help" target="_self" href="submitError.php?c=25894&amp;query=L25ld1BlcnNvbi5waHA%2Fbm9hdXRoPTEmYz0yNTg5NCZydXJsPWFIUjBjSE02THk5bFpHRnpMbWx1Wm04dlRqSTFPRGswUDJNOU1qVTRPVFElM0Q%3D&amp;m=1">Request help</a>
+  </div>
+  
+  
+  </body></html>

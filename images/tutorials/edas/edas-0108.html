@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+  <meta charset='UTF-8'>
+  <meta name='robots' content='none'/>
+  <link rel='icon' type='image/vnd.microsoft.icon' href='https://edas.info/icon/favicon.ico' />
+  <link rel='stylesheet' href='https://edas.info//unpkg.com/purecss@1.0.0/build/pure-min.css' />
+  <link rel='stylesheet' href='https://edas.info/css/progress.css' type='text/css' />
+  <link rel='stylesheet' href='https://edas.info/css/menu1.css' type='text/css' />
+  <link rel='stylesheet' href='https://edas.info/css/form.css' type='text/css' />
+  <link rel='stylesheet' href='https://edas.info/css/jquery-ui.css' />
+  <link rel='stylesheet' href='https://edas.info//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css' />
+  <link rel='stylesheet' href='https://edas.info/css/edas.css' type='text/css' />
+  <link rel='stylesheet' href='../../../fonts/font-awesome/css/font-awesome.css' type='text/css' /> <style>
+  #cssmenu .active a, #cssmenu li:hover > a > a {
+    -webkit-box-shadow: none;
+    background: none;
+    border-bottom: solid 2px #fd8100;
+    border-top: none;
+    box-shadow: none;
+    color: #fd8100;
+    text-shadow: none;
+}
+
+#cssmenu a, #cssmenu a:link {
+    border-radius: 0px;
+    color: #073c64;
+    display: block;
+    font-family: montserrat;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+    padding: 15px 15px;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+
+#cssmenu li:hover > a {
+    -webkit-box-shadow: none;
+    background: none;
+    border-bottom: solid 2px #fd8100;
+    border-top: none;
+    box-shadow: none;
+    color: #fd8100;
+    text-shadow: none;
+}
+
+#cssmenu ul {
+    -webkit-box-shadow: none;
+    background: #f0f0f0;
+    border-style: none;
+}
+
+#header {
+    background-color: #f0f0f0;
+    border-style: none;
+}
+
+#login-box {
+    background-color: #f0f0f0;
+    border: none;
+    box-shadow: none;
+    margin-left: 0;
+}
+
+#main {
+    background: #ffffff;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    padding: 1em;
+    position: relative;
+    width: 90%;
+}
+
+#main h3 {
+    font-weight: bold;
+}
+
+#main p {
+    font-family: open sans;
+    font-size: 10pt;
+}
+
+.danger {
+    background-color: #f8d7da;
+    border-bottom: 0px;
+    border-top: 0px;
+    color: #721c24;
+}
+
+.info {
+    background-color: #d1ecf1;
+    border-bottom: 0px;
+    border-top: 0px;
+    color: #0c5460;
+}
+
+.info, .success, .warning, .failure, .error, .bug {
+    border-radius: 5px;
+    margin: 10px 0px;
+    padding: 0px;
+}
+
+.milestone-late {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.milestone-moot {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+
+.notes {
+    font-family: open sans;
+    font-size: 8pt;
+}
+
+.notes.event-active {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.notes.event-inactive {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.success {
+    background-color: #d4edda;
+    border-bottom: 0px;
+    border-top: 0px;
+    color: #155724;
+}
+
+.template-default, .template-default a {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+
+.template-defined, .template-defined a {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.warning {
+    background-color: #fcf8e3;
+    border-bottom: 0px;
+    border-top: 0px;
+    color: #856404;
+}
+
+a {
+    color: #fd8100;
+}
+
+a.pure-menu-link {
+    font-family: montserrat;
+    text-transform: uppercase;
+}
+
+a.ui-tabs-anchor {
+    background-color: #c5c5c5;
+    border-style: none;
+    color: #000;
+    font-family: montserrat;
+    font-size: 10;
+    text-transform: uppercase;
+}
+
+a.ui-tabs-anchor:hover, a.ui-tabs-active {
+    background-color: #fdcb2c;
+    border-style: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+div.footer {
+    display: none;
+}
+
+div.pure-menu.pure-menu-horizontal {
+    background-color: #e6e6e6;
+    box-shadow: none;
+}
+
+h3.sessiontime {
+    font-size: 12pt;
+}
+
+h4.sessionday {
+    background-color: #149fc0
+;
+    font-family: montserrat;
+    font-size: 12pt;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h4.sessiontitle {
+    font-size: 10pt;
+    text-transform: uppercase;
+}
+
+html.gr__edas_info {
+    background-color: #f0f0f0;
+}
+
+html.gr__edas_info body {
+    background: #f0f0f0;
+}
+
+input[type=button], input[type=submit], input[type="file"] {
+    background-color: #007bff;
+    border-radius: 5px;
+    color: #fff;
+    font-family: montserrat;
+    text-transform: uppercase;
+}
+
+li.has-sub.active a {
+    border-style: none;
+}
+
+span.logo {
+    display: none;
+}
+
+span.notes {
+    font-size: 10pt;
+}
+
+td.heading {
+    background-color: #cce5ff;
+    color: #004085;
+    font-family: open sans;
+    font-size: 10pt;
+}
+
+td.sessionday {
+    background-color: #149fc0;
+    padding-top: 0;
+}
+
+td.track-closed {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+td.track-closed a {
+    color: #000000;
+}
+
+th.heading {
+    background-color: #cce5ff;
+    color: #004085;
+    font-family: open sans;
+    font-size: 10pt;
+}
+
+th.heading-small {
+    background-color: #cce5ff;
+    color: #004085;
+    font-family: open sans;
+    font-size: 10pt;
+}
+
+th.sorting {
+    background-color: #cce5ff;
+    color: #004085;
+    font-size: 10;
+}
+
+th.sorting_asc {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+th.sorting_disabled {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+tr td input {
+    box-shadow: none;
+}
+
+tr.even td {
+    font-family: open sans;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+tr.even td a {
+    color: #000;
+    text-decoration: overline;
+}
+
+tr.milestone-completed td {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+tr.milestone-completed td a {
+    color: #000000;
+    text-decoration: overline;
+}
+
+tr.milestone-late td {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+tr.milestone-late td a {
+    color: #000000;
+    text-decoration: overline;
+}
+
+tr.milestone-moot td {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+tr.milestone-moot td a {
+    color: #000000;
+    text-decoration: overline;
+}
+
+tr.milestone-not_applicable {
+    background-color: #fefefe;
+    color: #818182;
+}
+
+tr.milestone-not_applicable td {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+tr.milestone-not_applicable td a {
+    color: #000000;
+    text-decoration: overline;
+}
+
+tr.odd td {
+    background-color: #f8f7fd;
+    font-family: open sans;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+tr.odd td a {
+    color: #000;
+    text-decoration: overline;
+}
+
+tr.tpc-accepted td {
+    background-color: #d4edda;
+}
+
+ul.breadcrumbs {
+    display: none;
+}
+
+ul.ui-tabs-nav.ui-corner-all.ui-helper-reset.ui-helper-clearfix.ui-widget-header {
+    background-color: #c5c5c5;
+}
+  </style>
+
+  <link rel='alternate' type='application/rss+xml'
+   href='rssConferences.php' title='RSS feed for conferences'/>
+<title>Register a paper for 2019 5th International Conference on Science and Technology (ICST): Computer and Information Technology Symposium [ICST UGM 2019] EDAS (1570845 - rafieiy.m@gmail.com): </title>
+ <script src='/js/edas.js'></script>
+ <script src='/js/latexit.js'></script>
+ <script src='/js/jquery.js'></script>
+ <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
+ <script src='https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js'
+   integrity='sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut' crossorigin='anonymous'>
+ </script>
+ <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'
+   integrity='sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k' crossorigin='anonymous'>
+ </script>
+ <script async
+   src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS_CHTML'></script>
+ <script>
+   $(function() {
+   $( '#tabs' ).tabs();
+   });
+</script>
+</head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+    <div id="header">
+    <div class="logo"><img src="https://s3.amazonaws.com/edas.logo/25894.png" alt="ICST UGM 2019" class="photo-left" title="Logo for 2019 5th International Conference on Science and Technology (ICST)" height="50"></div>
+    <div id="cssmenu"><ul>
+    <li class="has-sub"><a href="index.php"><span>Home</span></a>
+    <ul>
+    <li><a href="logout.php?c=25894"><span>Log out</span></a></li>
+    </ul>
+    </li>
+    <li><a href="listConferencesRegister.php?c=25894"><span>Register</span></a></li>
+    <li class="has-sub"><a href="my.php?c=25894"><span>My...</span></a>
+    <ul>
+    <li><a href="showSelf.php?c=25894"><span>My profile</span></a></li>
+    <li><a href="listConferencesAuthor.php?c=25894"><span>My papers</span></a></li>
+    <li><a href="listConferencesTPC.php?c=25894"><span>My TPCs</span></a></li>
+    <li><a href="listConferencesChair.php?c=25894"><span>Chairing</span></a></li>
+    </ul>
+    </li>
+    <li class="last"><a href="help.php?for=newPaper&amp;c=25894"><span>Help</span></a></li>
+    </ul>
+    </div><span class="logo">ICST UGM 2019</span><ul itemscope="" itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs"><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class=""><a itemprop="item" href="/papers.php?c=25894"><span itemprop="name">Papers</span></a><meta itemprop="position" content="1"> <span class="divider">»</span></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class=" active"><span itemprop="name">Submit</span><meta itemprop="position" content="2"></li></ul></div>
+    <div id="main">
+    <h3>Register a paper for 2019 5th International Conference on Science and Technology (ICST): Computer and Information Technology Symposium</h3><p>Checking email address by contacting the email.co email server. This may take several minutes if the person's email server is slow. Do not resubmit request.<br>
+    Resolving MTA ASPMX.L.EMAIL.CO<br>
+    Resolving MTA ALT1.ASPMX.L.EMAIL.CO<br>
+    Resolving MTA ALT2.ASPMX.L.EMAIL.CO<br>
+    Resolving MTA ASPMX2.EMAIL.CO<br>
+    Resolving MTA ASPMX3.EMAIL.CO<br>
+    Trying 123.45.67.89<br>
+    lorem.ip@email.co verified with sender bounce@edas.info
+    </p>
+    <div class="success"><span class="notice-symbol fa fa-check fa-2x"></span><span class="notice-text">The paper was recorded.</span></div>
+    <div class="checkout-wrap"><ul class="checkout-bar">
+    <li class="next ">Register paper</li><li class="">Add authors</li><li class="" style="width: 30%">Upload review manuscript</li></ul>
+    </div><p>All authors must be added to the paper record. You can <a href="#">add authors</a> or <a href="#">upload the manuscript</a>.</p></div>
+    </body>
+</html>
