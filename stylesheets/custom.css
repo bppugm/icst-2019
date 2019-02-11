@@ -1,8 +1,35 @@
+/*!
+ * Custom stylesheet for ICST website
+ * Created by Jaybaeta (https://github.com/jaybaeta) on 2017
+ * Modified by Wildan (https://github.com/w1lldone) and Rafieiy (https://github.com/davieiycode) on 2019
+ */
+
+/* MAGNIFYING GLASS by w3schools (https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp) */
+
+* {box-sizing: border-box;}
+
+.img-magnifier-container {
+  position: relative;
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 100px;
+  height: 100px;
+}
+
+/* CUSTOM HEADING 1 */
+
 h1 {
   text-align: center;
   margin: 0.67em 0 !important;
   font-weight: 300;
 }
+
 /* JUMBOTRON */
 
 .jumbotron {
