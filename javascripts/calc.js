@@ -1,3 +1,8 @@
+/*!
+  * Calculator for UASC fees
+  * Developed by Yoga (https://github.com/febriyanyoga) on 2018
+  */
+
 function show(){
     $('#print-area-non').show();
     $('#print-area').show();
