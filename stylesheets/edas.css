@@ -344,6 +344,7 @@ tr {
 
 tr td input {
     box-shadow: none;
+    font-weight: bold;
 }
 
 tr.even td {
@@ -458,6 +459,10 @@ input[type="file"] {
     color: #fff;
     font-family: montserrat;
     text-transform: uppercase;
+}
+
+form input[type="text"], form textarea {
+    box-shadow: none;
 }
 
 li.has-sub.active a {
