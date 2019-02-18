@@ -10,6 +10,8 @@ This is the website for The 5<sup>th</sup> International Conference on Science a
 
 + [@davieiycode](https://github.com/davieiycode)
 + [@w1lldone](https://github.com/w1lldone)
++ [@imalavins](https://github.com/imalavins)
++ [@nisakusumaa](https://github.com/nisakusumaa)
 
 ### Development
 
