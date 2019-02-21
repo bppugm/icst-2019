@@ -37,8 +37,6 @@ This is the website for The 5<sup>th</sup> International Conference on Science a
 
 ### Symposia images
 
-All symposia images are licensed under the Creative Commons via Flickr.
-
 + Computer and Information Technology: [Ars Electronica](https://flic.kr/p/NLBeFd); [CC BY-NC-ND 2.0](https://creativecommons.org/licenses/by-nc-nd/2.0/)
 + Electronics, Communication, Control, and Instrumentation: [Ched Cheddles](https://flic.kr/p/9773UW); [CC BY-NC-ND 2.0](https://creativecommons.org/licenses/by-nc-nd/2.0/)
 + Environmental and Earth Science: [Kreemerz](https://flic.kr/p/27f3hV5); [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
