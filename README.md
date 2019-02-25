@@ -32,7 +32,18 @@ This is the website for The 5<sup>th</sup> International Conference on Science a
 
 ### Jumbotron
 
-+ Background by [@davieiycode](https://github.com/davieiycode).
++ Background by [@davieiycode](https://github.com/davieiycode), based on [Starline](https://www.freepik.com/free-vector/halftone-texture-frame-with-text-space_2543378.htm); free for comercial use.
+
+
+### Symposia images
+
++ Computer and Information Technology: [Ars Electronica](https://flic.kr/p/NLBeFd); [CC BY-NC-ND 2.0](https://creativecommons.org/licenses/by-nc-nd/2.0/)
++ Electronics, Communication, Control, and Instrumentation: [Ched Cheddles](https://flic.kr/p/9773UW); [CC BY-NC-ND 2.0](https://creativecommons.org/licenses/by-nc-nd/2.0/)
++ Environmental and Earth Science: [Kreemerz](https://flic.kr/p/27f3hV5); [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
++ Material Science and Chemistry: [Martin Lopez](https://www.pexels.com/photo/two-test-tubes-954585/); free for personal and commercial use
++ Mechanical and Industrial Engineering: [Pixabay](https://www.pexels.com/photo/gray-and-gold-steel-gears-159275/); free for personal and commercial use
++ Power and Energy: [Ali Madad](https://www.pexels.com/photo/people-in-boat-near-water-dam-1259924/); free for personal and commercial use
++ Remote Sensing and Geomatics: [NASA's Marshall Space Flight Center](https://flic.kr/p/UyzZWb); [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)
 
 
 ## License
