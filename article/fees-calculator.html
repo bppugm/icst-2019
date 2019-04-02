@@ -14,10 +14,15 @@
   <!-- CSS -->
   <link href="../stylesheets/site.css" rel="stylesheet" />
   <link href="../stylesheets/custom.css" rel="stylesheet" />
+  <link href="../stylesheets/print.min.css" rel="stylesheet" />
+  <link href="../stylesheets/calc.css" rel="stylesheet" />
 
   <!-- JAVASCRIPT -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
   <script src="../javascripts/all.js"></script>
+  <script src="../javascripts/calc.js"></script>
+  <script src="../javascripts/jquery.formatCurrency-1.4.0.js"></script>
+  <script src="../javascripts/print.min.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113279197-1"></script>
   <script src="../javascripts/gtag.js"></script>
@@ -77,7 +82,7 @@
           </div>
         </li>
 
-        <!--PUBLICATIONS -->
+       <!--PUBLICATIONS -->
         <li class="nav-item dropdown"> 
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Publications</a> 
           <div class="dropdown-menu" role="menu"> 
@@ -89,7 +94,7 @@
             <a class="dropdown-item" href="msf.html">Materials Science Forum</a> 
           </div>
         </li>
-
+          
         <!-- PRESENTERS -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Presenters</a>
@@ -169,17 +174,166 @@
     <div class="container">
       <nav class="breadcrumb" style="background-color: transparent">
         <a class="breadcrumb-item" href="../index.html">Home</a>
-        <span class="breadcrumb-item active">Conference fees</span>
+        <a class="breadcrumb-item" href="../article/fees.html">Conference fees</a>
+        <span class="breadcrumb-item active">Calculator</span>
       </nav>
     </div>
 
   <!-- CONTENT -->
-  <div class="container">
-    <h1>Conference fees calculator</h1>
+  <div class="container pb-5">
+    <h1>Calculate your expense</h1>
 
-  <!-- CALCULATOR -->
-  <div><div><div>
-        <div class="col-md-12 mx-auto"><label class="radio-tile-group"><h3>Type of participation</h3></label>
+    <style type="text/css">
+    .radio-tile-group {
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    $primary-color: #1d73cc;
+
+    .radio-tile-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .radio-tile-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .input-container {
+      position: relative;
+      height:  7rem;
+      width:  9rem;
+      margin: 0.5rem;
+    }
+
+    .radio-button {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .radio-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #1d73cc;
+      border-radius: 5px;
+      padding: 1rem;
+      transition: transform 300ms ease;
+      background: white;
+    }
+    .icon svg {
+      fill: #1d73cc;
+      width: 3rem;
+      height: 3rem;
+    }
+    .radio-tile-label {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1d73cc;
+    }
+
+    .radio-button:checked + .radio-tile {
+      background-color: #1d73cc;
+      border: 2px solid #1d73cc;
+      color: white;
+      transform: scale(1.1, 1.1);
+    }
+
+    .radio-button:checked + .radio-tile  .icon svg {
+      fill: white;
+      background-color: #1d73cc;
+    }
+    .radio-button:checked + .radio-tile  .radio-tile-label {
+      color: white;
+      background-color: #1d73cc;
+    }
+    .row {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    @media (min-width: 576px) {
+      .row {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .row {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .row {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .row {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+    }
+    .col-12 {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .table-bordered thead th, .table-bordered thead td {
+      border-bottom-width: 2px;
+    }
+    .table thead th {
+      vertical-align: middle;
+      border-bottom: 2px solid #eceeef;
+    }
+    .table tbody td {
+      vertical-align: middle;
+      border-bottom: 2px solid #eceeef;
+    }
+
+    .table-bordered th, .table-bordered td {
+      border: 1px solid #eceeef;
+    }
+    .text-center {
+      text-align: center !important;
+    }
+  </style>
+  <div class="tab-content" >
+    <div id="calculator" class ="tab-pane active" role="tabpanel">
+      <div class="row pt-5">
+        <div class="col-md-12 ml-auto mr-auto">
+         <br><label class="radio-tile-group"><b style="font-size: 18pt;">Type of participation</b></label>
          <div class="radio-tile-group">
           <div class="col-md-4 col-6">
             <input id="presenteryes" class="radio-button" type="radio" value="1" name="presenter" />
@@ -202,7 +356,7 @@
             </div>
           </div>
         </div>
-        <label class="radio-tile-group " id="121"><h3 class="pt-3">Country</h3></label>
+        <br><label class="radio-tile-group " id="121"><b style="font-size: 18pt";>Country</b></label>
         <div class="form-group col-md-4 ml-auto mr-auto" id="122">
           <select class="form-control" id="12" name="from2">
             <option value="AF">Afghanistan</option>
@@ -456,7 +610,7 @@
             <option value="ZW">Zimbabwe</option>
           </select>
         </div>
-        <label class="radio-tile-group " id="11" name="from"><h3 class="pt-3">Country</h3></label>
+        <label class="radio-tile-group " id="11" name="from"><b style="font-size: 18pt";>Country</b></label>
         <div class="form-group col-md-4 ml-auto mr-auto" id="111">
           <select class="form-control" id="1">
             <option value="AF">Afghanistan</option>
@@ -711,7 +865,7 @@
           </select>
         </div>
 
-        <label class="radio-tile-group" id="21"><h3 class="pt-3">Status</h3></label>
+        <label class="radio-tile-group" id="21"><b style="font-size: 18pt;">Status</b></label>
         <div class="radio-tile-group" id="2">
           <div class="col-md-4 col-6">
             <input id="drive" class="radio-button" type="radio" value="1" name="student" />
@@ -735,7 +889,8 @@
            </div>
          </div>
        </div>
-<label class="radio-tile-group" id="31"><h3 class="pt-3">IEEE membership </h3></label>
+
+       <br><label class="radio-tile-group" id="31"><b style="font-size: 18pt;">IEEE membership </b></label>
        <div class="radio-tile-group" id="3">
         <div class="col-md-4 col-6">
           <input id="drive" class="radio-button" type="radio" value="1" name="ieee" />
@@ -759,20 +914,23 @@
         </div>
       </div>
     </div>
+    <br>
     <div class="radio-tile-container">
      <div class="radio-tile-group" id="numofpaper"  class="form-control">
-      <label class="radio-inline"><h3 class="pt-3">Amount of papers</h3>
+      <label class="radio-inline"><b style="font-size: 18pt;">Amount of papers </b>
         <input type="text" class="form-control" name="numofpaper" id="text">
       </label>
     </div>
-    <div class="radio-tile-group mx-auto" id="btncount" class="form-control">
-      <input type="button" class="btn btn-success pull-left px-5 py-3" name="count" id="count" value="Count" data-toggle="modal">
+    <div class="radio-tile-group" id="btncount"  class="form-control">
+      <input type="button" class="btn btn-success pull-left text-uppercase" name="count" id="count" value="Calculate" data-toggle="modal">
     </div><br>
   </div>
 </div>
 </div>
 </div>
-</div></div>
+</div>
+
+</div>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -783,11 +941,6 @@
         <img src="../images/publication/ieee-logo.svg" class="px-3 my-2" height="50px">
         <img src="../images/publication/ttp-logo.svg" class="px-3 my-2" height="50px">
         <img src="../images/publication/scopus.svg" class="px-3 my-2" height="50px">
-        <!--<img src="./images/logos/e3s.svg" class="px-3 my-2" height="40px"> 
-      <img src="./images/logos/scientific net.svg" class="px-3 my-2" height="40px">
-      <img src="./images/logos/scopus.svg" class="px-3 my-2" height="40px">
-      <img src="./images/logos/ieee.svg" class="px-3 my-2" height="40px"> 
-      <img src="./images/logos/ijc.svg" class="px-3 my-2" height="40px">-->
         <hr style="border-color: #e3e3f3; width: 80%;" class="mx-auto my-4">
       </div>
     </div>
@@ -819,7 +972,7 @@
         <h5>Explore</h5>
         <p style="line-height: 2;">
           <a href="about-ugm.html">Universitas Gadjah Mada</a> <br>
-          <a href="https://www.yogyes.com/">The city of Yogyakarta</a>
+          <a target="_blank" href="https://www.yogyes.com/">The city of Yogyakarta</a> <br>
           <a target="_blank" href="http://visitramayana.com//">Ramayana Ballet</a>
         </p>
         <h5>Media</h5>
@@ -895,7 +1048,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <p>You are going to present <b><span id="n"></span></b> of your paper(s) at the ICST 2018.</p>
+            <p>You are going to present <b><span id="n"></span></b> of your paper(s) at the ICST 2019.</p>
             <div style="margin-left: auto; margin-right: auto;">
               <table class="table table-hover col-12 table-bordered table-responsive mx-auto" style="border-color: #1d73cc;">
                 <thead>
@@ -929,9 +1082,9 @@
           </div>
         </div>
 
-        <p><i style="color: red;">*</i> Please pay the conference fee before <b>June 30</b>.</p>
+        <p><i style="color: red;">*</i>Please pay the conference fee before <b>6 July 2019</b>.</p>
         <div class="alert alert-info" style="color: black;">
-          <p>You can get an early-bird discount of <span id="g"></span> if you pay earlier than <b>14 June 2019</b>. So, you only need to pay for <span id="h"></span>.</p>
+          <p>You can get an early-bird discount of <span id="g"></span> if you pay earlier than <b>28 June 2019</b>. So, you only need to pay for <span id="h"></span>.</p>
         </div>
 
         <!-- <p>Please carefully read the payment procedure at <a href="http://icst.ugm.ac.id/2018/article/payment-procedure.html">http://icst.ugm.ac.id/2018/article/payment-procedure.html</a></p> -->
@@ -978,7 +1131,7 @@
   </div>
   <div class="row">
     <div class=" col-12">
-      <p>You are going to present <b><span id="nP"></span></b> of your paper(s) at the ICST 2018.</p>
+      <p>You are going to present <b><span id="nP"></span></b> of your paper(s) at the ICST 2019.</p>
       <table class="table table-lg table-bordered  mx-auto" style="border: none;">
         <thead  style="background-color:#1d73cc; color: white;">
           <tr>
@@ -1012,9 +1165,9 @@
     </div>
   </div>
 
-  <p><i style="color: red;">*</i>Please pay the conference fee before <b>June 30</b>.</p>
+  <p><i style="color: red;">*</i>Please pay the conference fee before <b>6 July 2019</b>.</p>
   <div class="alert alert-info" style="color: black;">
-    <p>You can get an early-bird discount of <span id="gP"></span> if you pay earlier than <b>14 June 2019</b>. So, you only need to pay for <span id="hP"></span>.</p>
+    <p>You can get an early-bird discount of <span id="gP"></span> if you pay earlier than <b>28 June 2019</b>. So, you only need to pay for <span id="hP"></span>.</p>
   </div>
 
   <!-- <p>Please carefully read the payment procedure at <a href="http://icst.ugm.ac.id/2018/article/payment-procedure.html">http://icst.ugm.ac.id/2018/article/payment-procedure.html</a></p> -->
@@ -1080,9 +1233,9 @@
           </div>
         </div>
 
-        <p><i style="color: red;">*</i>Please pay the conference fee before <b>June 30</b>.</p>
+        <p><i style="color: red;">*</i>Please pay the conference fee before <b>6 July 2019</b>.</p>
         <div class="alert alert-info" style="color: black;">
-          <p>You can get an early-bird discount of <span id="g2"></span> if you pay earlier than <b>14 June 2019</b>. So, you only need to pay for <span id="h2"></span>.</p>
+          <p>You can get an early-bird discount of <span id="g2"></span> if you pay earlier than <b>28 June 2019</b>. So, you only need to pay for <span id="h2"></span>.</p>
         </div>
 
         <!-- <p>Please carefully read the payment procedure at <a href="http://icst.ugm.ac.id/2018/article/payment-procedure.html">http://icst.ugm.ac.id/2018/article/payment-procedure.html</a></p> -->
@@ -1150,9 +1303,9 @@
     </div>
   </div>
 
-  <p><i style="color: red;">*</i>Please pay the conference fee before <b>June 30</b>.</p>
+  <p><i style="color: red;">*</i>Please pay the conference fee before <b>6 July 2019</b>.</p>
   <div class="alert alert-info" style="color: black;">
-    <p>You can get an early-bird discount of <span id="g2P"></span> if you pay earlier than <b>14 June 2019</b>. So, you only need to pay for <span id="h2P"></span>.</p>
+    <p>You can get an early-bird discount of <span id="g2P"></span> if you pay earlier than <b>28 June 2019</b>. So, you only need to pay for <span id="h2P"></span>.</p>
   </div>
 
   <!-- <p>Please carefully read the payment procedure at <a href="http://icst.ugm.ac.id/2018/article/payment-procedure.html">http://icst.ugm.ac.id/2018/article/payment-procedure.html</a></p> -->
@@ -1164,6 +1317,370 @@
 </div>
 <!-- end printable area non-presenter -->
 
-<!-- CALCULATOR SCRIPT -->
 <script type="text/javascript" src="../javascripts/jquery.formatCurrency-1.4.0.js"></script>
-<script type="text/javascript" src="../javascripts/calc.js"></script>
+<script type="text/javascript">
+  function show(){
+   $('#print-area-non').show();
+   $('#print-area').show();
+ }
+ function hide(){
+   $('#print-area-non').hide();
+   $('#print-area').hide();
+ }
+ $('#print-area-non').hide();
+ $('#print-area').hide();
+ $('#count').click(function(){
+    var presenter = parseInt($('input[name="presenter"]:checked').val());//presenter
+    var from = $('#1 :selected').val();//presenter no
+    var from2 = $('#12 :selected').val(); //presenter yes
+    var student = parseInt($('input[name="student"]:checked').val());
+    var ieee = parseInt($('input[name="ieee"]:checked').val());
+    var numofpaper = $('#text').val();
+    if(numofpaper == 1){
+      $("#n").text('one');
+      $("#nP").text('one');
+    }else if(numofpaper == 2){
+      $("#n").text('two');
+      $("#nP").text('two');
+    }else if(numofpaper == 3){
+      $("#n").text('three');
+      $("#nP").text('three');
+    }else if(numofpaper == 4){
+      $("#n").text('four');
+      $("#nP").text('four');
+    }else if(numofpaper == 5){
+      $("#n").text('five');
+      $("#nP").text('five');
+    }else if(numofpaper == 6){
+      $("#n").text('six');
+      $("#nP").text('six');
+    }else if(numofpaper == 7){
+      $("#n").text('seven');
+      $("#nP").text('seven');
+    }else if(numofpaper == 8){
+      $("#n").text('eight');
+      $("#nP").text('eight');
+    }else if(numofpaper == 9){
+      $("#n").text('nine');
+      $("#nP").text('nine');
+    }else if(numofpaper == 10){
+      $("#n").text('ten');
+      $("#nP").text('ten');
+    }else{
+      $("#n").text(numofpaper);
+      $("#nP").text(numofpaper);
+    }
+
+    var f1 = 3000000;
+    var f2 = 3500000;
+    var f3 = f1;
+    var f4 = f2;
+    var f5 = 250;
+    var f6 = f5;
+    var f7 = 300;
+    var f8 = f7;
+    var f9 = 1500000;
+    var f10 = 150;
+
+    var a1 = 1500000;
+    var a2 = 2000000;
+    var a3 = a1;
+    var a4 = a2;
+    var a5 = 100;
+    var a6 = a5;
+    var a7 = 150;
+    var a8 = a7;
+
+    var e1 = 1000000;
+    var e2 = e1;
+    var e3 = e1;
+    var e4 = e1;
+    var e5 = 50;
+    var e6 = e5;
+    var e7 = e5;
+    var e8 = e5;
+    var e9 = 500000;
+    var e10 = e5;    
+
+    if(presenter == 1){
+      $("#varTypeOfPresenter").text(": Presenter");
+      $("#varTypeOfPresenterP").text(": Presenter");
+    }else{
+      $("#varTypeOfPresenter2").text(": Non-presenter");
+      $("#varTypeOfPresenter2P").text(": Non-presenter");
+    }
+
+    var from2 = $('#12 :selected').text(); //presenter yes
+    $("#varCountry").text(": "+from2);
+    $("#varCountryP").text(": "+from2);
+
+
+    var from = $('#1 :selected').text(); //presenter no
+    $("#varCountry2").text(": "+from);
+    $("#varCountry2P").text(": "+from);
+
+    if(student == 1){
+      $("#varStatus").text(": Student");
+      $("#varStatusP").text(": Student");
+    }else{
+      $("#varStatus").text(": Non-student");
+      $("#varStatusP").text(": Non-student");
+    }
+
+    if(ieee == 1){
+      $("#VarIeee").text(": Member");
+      $("#VarIeeeP").text(": Member");
+    }else{
+      $("#VarIeee").text(": Non-member");
+      $("#VarIeeeP").text(": Non-member");
+    }
+
+
+    if(presenter != 1 && presenter != 2){
+      $('#costearly').val('');
+      $('#costreg').val(''); 
+      alert("You have not selected the 'type of participation'. Please complete the form to continue.");
+      return false;
+    }else if(presenter == 1){
+      if(student !=1 && student !=2){
+        $('#costearly').val('');
+        $('#costreg').val(''); 
+        alert("You haven't selected the 'status'. Please complete the form to continue.");
+        return false;
+      }else if(ieee !=1 && ieee !=2){
+        $('#costearly').val('');
+        $('#costreg').val(''); 
+        alert("You haven't selected the 'IEEE membership'. Please complete the form to continue.");
+        return false;
+      }else if ( numofpaper == '') {
+        $('#costearly').val('');
+        $('#costreg').val(''); 
+        alert("You have not entered the 'Numbers of Papers'. Please complete the form to continue.");
+        return false;
+      }
+    }
+
+    if(presenter == 2){//no
+      if(from == 'Indonesia'){ //yes
+       $("#b2").text(f9).formatCurrency();
+       $("#f2").text(f9).formatCurrency();
+       $("#g2").text(e9).formatCurrency();
+       $("#h2").text(f9-e9).formatCurrency();
+       // Print
+       $("#b2P").text(f9).formatCurrency();
+       $("#f2P").text(f9).formatCurrency();
+       $("#g2P").text(e9).formatCurrency();
+       $("#h2P").text(f9-e9).formatCurrency();
+      }else{ //no
+        if(from != 'Indonesia'){
+          var h2 = f10-e10;
+          $("#b2").text('USD' + f10);
+          $("#f2").text('USD' + f10);
+          $("#g2").text('USD' + e10);
+          $("#h2").text('USD' + h2);
+          // Print
+          $("#b2P").text('USD' + f10);
+          $("#f2P").text('USD' + f10);
+          $("#g2P").text('USD' + e10);
+          $("#h2P").text('USD' + h2);
+        }
+      } 
+    }else{
+
+    if (presenter == 1 && numofpaper != ''){ //yes
+      if(from2 == 'Indonesia' && numofpaper != ''){
+        if(student == 1 && numofpaper != ''){ //yes
+          if(ieee == 1 && numofpaper != ''){
+            $("#a").text(f1).formatCurrency();
+            $("#b").text(f1).formatCurrency();
+            $("#c").text((numofpaper-1));
+            $("#d").text(a1).formatCurrency();
+            $("#e").text(((numofpaper-1)*a1)).formatCurrency();
+            $("#f").text(f1+((numofpaper-1)*a1)).formatCurrency();
+            $("#g").text(e1).formatCurrency();
+            $("#h").text((f1+((numofpaper-1)*a1))-e1).formatCurrency();
+            // print
+            $("#aP").text(f1).formatCurrency();
+            $("#bP").text(f1).formatCurrency();
+            $("#cP").text((numofpaper-1));
+            $("#dP").text(a1).formatCurrency();
+            $("#eP").text(((numofpaper-1)*a1)).formatCurrency();
+            $("#fP").text(f1+((numofpaper-1)*a1)).formatCurrency();
+            $("#gP").text(e1).formatCurrency();
+            $("#hP").text((f1+((numofpaper-1)*a1))-e1).formatCurrency();
+          }else if (ieee == 2 && numofpaper != ''){
+            $("#a").text(f2).formatCurrency();
+            $("#b").text(f2).formatCurrency();
+            $("#c").text((numofpaper-1));
+            $("#d").text(a2).formatCurrency();
+            $("#e").text(((numofpaper-1)*a2)).formatCurrency();
+            $("#f").text(f2+((numofpaper-1)*a2)).formatCurrency();
+            $("#g").text(e2).formatCurrency();
+            $("#h").text((f2+((numofpaper-1)*a2))-e2).formatCurrency();
+            // Print
+            $("#aP").text(f2).formatCurrency();
+            $("#bP").text(f2).formatCurrency();
+            $("#cP").text((numofpaper-1));
+            $("#dP").text(a2).formatCurrency();
+            $("#eP").text(((numofpaper-1)*a2)).formatCurrency();
+            $("#fP").text(f2+((numofpaper-1)*a2)).formatCurrency();
+            $("#gP").text(e2).formatCurrency();
+            $("#hP").text((f2+((numofpaper-1)*a2))-e2).formatCurrency();
+          }
+        }else if (student == 2 && numofpaper != ''){ //no
+          if(ieee == 1 && numofpaper != ''){
+            $("#a").text(f3).formatCurrency();
+            $("#b").text(f3).formatCurrency();
+            $("#c").text((numofpaper-1));
+            $("#d").text(a3).formatCurrency();
+            $("#e").text(((numofpaper-1)*a3)).formatCurrency();
+            $("#f").text(f3+((numofpaper-1)*a3)).formatCurrency();
+            $("#g").text(e3).formatCurrency();
+            $("#h").text((f3+((numofpaper-1)*a3))-e3).formatCurrency(); 
+            // Print
+            $("#aP").text(f3).formatCurrency();
+            $("#bP").text(f3).formatCurrency();
+            $("#cP").text((numofpaper-1));
+            $("#dP").text(a3).formatCurrency();
+            $("#eP").text(((numofpaper-1)*a3)).formatCurrency();
+            $("#fP").text(f3+((numofpaper-1)*a3)).formatCurrency();
+            $("#gP").text(e3).formatCurrency();
+            $("#hP").text((f3+((numofpaper-1)*a3))-e3).formatCurrency(); 
+          }else if (ieee == 2 && numofpaper != ''){
+            $("#a").text(f4).formatCurrency();
+            $("#b").text(f4).formatCurrency();
+            $("#c").text((numofpaper-1));
+            $("#d").text(a4).formatCurrency();
+            $("#e").text(((numofpaper-1)*a4)).formatCurrency();
+            $("#f").text(f4+((numofpaper-1)*a4)).formatCurrency();
+            $("#g").text(e4).formatCurrency();
+            $("#h").text((f4+((numofpaper-1)*a4))-e4).formatCurrency();
+            // Print
+            $("#aP").text(f4).formatCurrency();
+            $("#bP").text(f4).formatCurrency();
+            $("#cP").text((numofpaper-1));
+            $("#dP").text(a4).formatCurrency();
+            $("#eP").text(((numofpaper-1)*a4)).formatCurrency();
+            $("#fP").text(f4+((numofpaper-1)*a4)).formatCurrency();
+            $("#gP").text(e4).formatCurrency();
+            $("#hP").text((f4+((numofpaper-1)*a4))-e4).formatCurrency();
+          }
+        }
+   }else if (from2 != 'Indonesia' && numofpaper != ''){ //no
+    if(student == 1 && numofpaper != ''){ //yes
+      if(ieee == 1 && numofpaper != ''){
+        var e = (numofpaper-1)*a5;
+        var f = f5+((numofpaper-1)*a5);
+        var h = (f5+((numofpaper-1)*a5))-e5;
+
+        $("#a").text('USD'+f5);
+        $("#b").text('USD'+f5);
+        $("#c").text((numofpaper-1));
+        $("#d").text('USD'+a5);
+        $("#e").text('USD'+ e);
+        $("#f").text('USD'+ f);
+        $("#g").text('USD'+e5);
+        $("#h").text('USD'+ h);
+        // Print
+        $("#aP").text('USD'+f5);
+        $("#bP").text('USD'+f5);
+        $("#cP").text((numofpaper-1));
+        $("#dP").text('USD'+a5);
+        $("#eP").text('USD'+ e);
+        $("#fP").text('USD'+ f);
+        $("#gP").text('USD'+e5);
+        $("#hP").text('USD'+ h);
+      }else if (ieee == 2 && numofpaper != ''){
+        var e = (numofpaper-1)*a6;
+        var f = f6+((numofpaper-1)*a6);
+        var h = (f6+((numofpaper-1)*a6))-e6;
+
+        $("#a").text('USD'+f6);
+        $("#b").text('USD'+f6);
+        $("#c").text((numofpaper-1));
+        $("#d").text('USD'+a6);
+        $("#e").text('USD'+ e);
+        $("#f").text('USD'+ f);
+        $("#g").text('USD'+e6);
+        $("#h").text('USD'+ h);
+        // Print
+        $("#aP").text('USD'+f6);
+        $("#bP").text('USD'+f6);
+        $("#cP").text((numofpaper-1));
+        $("#dP").text('USD'+a6);
+        $("#eP").text('USD'+ e);
+        $("#fP").text('USD'+ f);
+        $("#gP").text('USD'+e6);
+        $("#hP").text('USD'+ h);
+      }
+        }else if (student == 2 && numofpaper != ''){ //no
+          if(ieee == 1 && numofpaper != ''){
+            var e = (numofpaper-1)*a7;
+            var f = f7+((numofpaper-1)*a7);
+            var h = (f7+((numofpaper-1)*a7))-e7;
+
+            $("#a").text('USD'+f7);
+            $("#b").text('USD'+f7);
+            $("#c").text((numofpaper-1));
+            $("#d").text('USD'+a7);
+            $("#e").text('USD'+ e);
+            $("#f").text('USD'+ f);
+            $("#g").text('USD'+ e7);
+            $("#h").text('USD'+ h);
+            // Print
+            $("#aP").text('USD'+f7);
+            $("#bP").text('USD'+f7);
+            $("#cP").text((numofpaper-1));
+            $("#dP").text('USD'+a7);
+            $("#eP").text('USD'+ e);
+            $("#fP").text('USD'+ f);
+            $("#gP").text('USD'+ e7);
+            $("#hP").text('USD'+ h);
+          }else if (ieee == 2 && numofpaper != ''){
+           var e = (numofpaper-1)*a8;
+           var f = f8+((numofpaper-1)*a8);
+           var h = (f8+((numofpaper-1)*a8))-e8;
+
+           $("#a").text('USD'+f8);
+           $("#b").text('USD'+f8);
+           $("#c").text((numofpaper-1));
+           $("#d").text('USD'+a8);
+           $("#e").text('USD'+ e);
+           $("#f").text('USD'+ f);
+           $("#g").text('USD'+e8);
+           $("#h").text('USD'+ h);
+           // Print
+           $("#aP").text('USD'+f8);
+           $("#bP").text('USD'+f8);
+           $("#cP").text((numofpaper-1));
+           $("#dP").text('USD'+a8);
+           $("#eP").text('USD'+ e);
+           $("#fP").text('USD'+ f);
+           $("#gP").text('USD'+e8);
+           $("#hP").text('USD'+ h);
+         }
+       }
+     }
+   }
+ }
+
+});
+
+$(function(){
+  $("#1,#11,#111").hide();
+  $("input:radio#presenterno").click(function(){
+    $("#2,#21,#3,#31,#numofpaper, #12,#121,#122").hide();
+    $("#1,#11,#111").show();
+    // alert("iki alert cuk");
+    $("#count").attr('data-target', '#myModal2');
+  });
+  $("input:radio#presenteryes").click(function(){
+   $("#1,#11,#111").hide();
+   $('#costreg').val('');
+   $('#costearly').val('');
+   $("#2,#21,#3,#31,#12,#121,#122,#btncount, #numofpaper").show();
+   $("#count").removeAttr('data-target', '#myModal2');
+   $("#count").attr('data-target', '#myModal');
+ })
+});
+</script>
