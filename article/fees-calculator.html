@@ -4,25 +4,30 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <meta charset="utf-8" />
   <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
-
+  
   <title>Conference fees - ICST 2019</title>
-
+  
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/font-awesome/css/font-awesome.min.css">
-
+  
   <!-- CSS -->
   <link href="../stylesheets/site.css" rel="stylesheet" />
   <link href="../stylesheets/custom.css" rel="stylesheet" />
-
+  <link href="../stylesheets/print.min.css" rel="stylesheet" />
+  <link href="../stylesheets/calc.css" rel="stylesheet" />
+  
   <!-- JAVASCRIPT -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
   <script src="../javascripts/all.js"></script>
+  <script src="../javascripts/calc.js"></script>
+  <script src="../javascripts/jquery.formatCurrency-1.4.0.js"></script>
+  <script src="../javascripts/print.min.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113279197-1"></script>
   <script src="../javascripts/gtag.js"></script>
-
-
+  
+  
   <!-- FAVICON -->
   <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="../images/favicon/favicon-32x32.png" sizes="32x32">
@@ -31,7 +36,7 @@
   <link rel="shortcut icon" href="../images/favicon/favicon.ico">
   <meta name="msapplication-config" content="../images/favicon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-
+  
 </head>
 
 <body class="index">
@@ -59,11 +64,11 @@
             <a target="_blank" class="dropdown-item" href="http://visitramayana.com//">Ramayana Ballet</a>
           </div>
         </li>
-
+        
         <!-- SYMPOSIA -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Satellite events</a>
+          aria-haspopup="true" aria-expanded="false">Satellite events</a>
           <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="symposia.html">All events</a>
             <div class="dropdown-divider"></div>
@@ -76,20 +81,20 @@
             <a class="dropdown-item" href="remote-sensing-and-geomatics.html">Remote Sensing and Geomatics</a>
           </div>
         </li>
-
+        
         <!--PUBLICATIONS -->
-         <li class="nav-item dropdown"> 
+        <li class="nav-item dropdown"> 
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Publications</a> 
-           <div class="dropdown-menu" role="menu"> 
-             <a class="dropdown-item" href="publications.html">All publications</a> 
-             <div class="dropdown-divider"></div> 
-             <a class="dropdown-item" href="ieee.html">IEEE</a> 
-             <a class="dropdown-item" href="indonesian-journal-of-chemistry.html">Indonesian Journal of Chemistry</a> 
-             <a class="dropdown-item" href="e3s.html">E3S Web of Conferences</a> 
-             <a class="dropdown-item" href="ttp.html">Trans Tech Publications</a> 
-           </div>
-         </li> 
-
+          <div class="dropdown-menu" role="menu"> 
+            <a class="dropdown-item" href="publications.html">All publications</a> 
+            <div class="dropdown-divider"></div> 
+            <a class="dropdown-item" href="ieee.html">IEEE Xplore Digital Library</a> 
+            <!-- <a class="dropdown-item" href="indonesian-journal-of-chemistry.html">Indonesian Journal of Chemistry</a>  -->
+            <a class="dropdown-item" href="iop.html">IOP Conference Series</a>
+            <a class="dropdown-item" href="msf.html">Materials Science Forum</a> 
+          </div>
+        </li>
+        
         <!-- PRESENTERS -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Presenters</a>
@@ -98,20 +103,20 @@
             <a class="dropdown-item disabled-item" href="payment-procedure.html">Payment procedure</a>
             <div class="dropdown-divider"></div>
             <span class="dropdown-item disabled" style="color: #7FA3CB;">Presenter guidelines</span>
-              <a class="dropdown-item" href="author-guidelines.html">Author guidelines</a>
-              <a class="dropdown-item" href="presentation-guidelines.html">Presentation guidelines</a>
-              <a class="dropdown-item" href="downloads.html">Download guidelines and templates</a>
+            <a class="dropdown-item" href="author-guidelines.html">Author guidelines</a>
+            <a class="dropdown-item" href="presentation-guidelines.html">Presentation guidelines</a>
+            <a class="dropdown-item" href="downloads.html">Download guidelines and templates</a>
             <div class="dropdown-divider"></div>
             <span class="dropdown-item disabled" style="color: #7FA3CB;">Tutorials and help</span>
-              <a class="dropdown-item" href="tutorial-edas-account-registration.html">EDAS tutorials</a>
-              <a class="dropdown-item" href="tutorial-scientificnet-account-registration.html">Scientific.Net tutorials</a>
-              <!-- <a class="dropdown-item" href="../downloads/ICST2019-guidebook.pdf">Download guidebook</a> -->
+            <a class="dropdown-item" href="tutorial-edas-account-registration.html">EDAS tutorials</a>
+            <a class="dropdown-item" href="tutorial-scientificnet-account-registration.html">Scientific.Net tutorials</a>
+            <!-- <a class="dropdown-item" href="../downloads/ICST2019-guidebook.pdf">Download guidebook</a> -->
             <div class="dropdown-divider"></div>
             <!--<span class="dropdown-item disabled" style="color: rgba(0,0,0,0.2); cursor:not-allowed">TTP account activation request</span>-->
             <a class="dropdown-item" href="submissions.html">Register now</a>
           </div>
         </li>
-
+        
         <!-- NON-PRESENTERS -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Non-presenters</a>
@@ -120,983 +125,1140 @@
             <a class="dropdown-item disabled-item" href="payment-procedure.html">Payment procedure</a>
             <div class="dropdown-divider"></div>
             <span class="dropdown-item disabled" style="color: #7FA3CB;">Tutorials and help</span>
-              <a class="dropdown-item disabled-item" href="foreign-attendant-non-presenter-tutorial.html">Foreign attendant</a>
-              <a class="dropdown-item disabled-item" href="local-attendant-non-presenter-tutorial.html">Local attendant</a>
-              <!-- <a class="dropdown-item" href="../downloads/ICST2019-guidebook.pdf" >Download guidebook</a > -->
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item disabled-item" href="submissions.html">Register now</a>
-          </div>
-        </li>
-
-        <!-- MEDIA -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Media</a>
-          <div class="dropdown-menu dropdown-menu-right" role="menu">
-            <a target="_blank" class="dropdown-item" href="https://www.flickr.com/photos/icst/albums">Images from the conference</a>
-            <a target="_blank" class="dropdown-item" href="https://www.youtube.com/channel/UCQU0DiHt6DhN3h9ojnBId7Q">Videos from the conference</a>
-          </div>
-        </li>
-
-        <!-- DOWNLOADS -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Downloads</a>
-          <div class="dropdown-menu dropdown-menu-right scrollable-menu" role="menu">
-            <a class="dropdown-item" href="downloads.html">View all downloads</a>
-            <div class="dropdown-divider"></div>
-            <span class="dropdown-item disabled" style="color: #7FA3CB;">Extras</span>
+            <a class="dropdown-item disabled-item" href="foreign-attendant-non-presenter-tutorial.html">Foreign attendant</a>
+            <a class="dropdown-item disabled-item" href="local-attendant-non-presenter-tutorial.html">Local attendant</a>
+            <!-- <a class="dropdown-item" href="../downloads/ICST2019-guidebook.pdf" >Download guidebook</a > -->
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item disabled-item" href="submissions.html">Register now</a>
+            </div>
+          </li>
+          
+          <!-- MEDIA -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Media</a>
+            <div class="dropdown-menu dropdown-menu-right" role="menu">
+              <a target="_blank" class="dropdown-item" href="https://www.flickr.com/photos/icst/albums">Images from the conference</a>
+              <a target="_blank" class="dropdown-item" href="https://www.youtube.com/channel/UCQU0DiHt6DhN3h9ojnBId7Q">Videos from the conference</a>
+            </div>
+          </li>
+          
+          <!-- DOWNLOADS -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Downloads</a>
+            <div class="dropdown-menu dropdown-menu-right scrollable-menu" role="menu">
+              <a class="dropdown-item" href="downloads.html">View all downloads</a>
+              <div class="dropdown-divider"></div>
+              <span class="dropdown-item disabled" style="color: #7FA3CB;">Extras</span>
               <a class="dropdown-item" download href="../downloads/ICST2019-poster.pdf">Conference poster</a>
               <!-- <a class="dropdown-item" download href="../downloads/ICST2019-program.pdf">Conference program</a> -->
               <!-- <a class="dropdown-item" download href="../downloads/ICST2019-program-book.pdf">Program book</a> -->
-            <div class="dropdown-divider"></div>
-            <span class="dropdown-item disabled" style="color: #7FA3CB;">Templates</span>
-              <a class="dropdown-item" download href="../downloads/E3S-template.zip">E3S Web of Conferences template</a>
+              <div class="dropdown-divider"></div>
+              <span class="dropdown-item disabled" style="color: #7FA3CB;">Templates</span>
+              <a class="dropdown-item" download href="../downloads/IOP-template.zip">IOP Conference Series template</a>
               <a class="dropdown-item" download href="../downloads/IEEE-template.zip">IEEE template</a>
-              <a class="dropdown-item" download href="../downloads/MSF-template.zip">Material Science Forum template</a>
-            <div class="dropdown-divider"></div>
-            <span class="dropdown-item disabled" style="color: #7FA3CB;">Tutorials and help</span>
+              <a class="dropdown-item" download href="../downloads/MSF-template.doc">Material Science Forum template</a>
+              <div class="dropdown-divider"></div>
+              <span class="dropdown-item disabled" style="color: #7FA3CB;">Tutorials and help</span>
               <a class="dropdown-item" download href="../downloads/ICST2019-author-guidelines.pdf">Author guidelines</a>
-              <!-- <a class="dropdown-item" download href="../downloads/ICST2019-presentation-guidelines.pdf">Presentation guidelines</a> -->
-              <!-- <a class="dropdown-item" download href="../downloads/ICST2019-guidebook.png">Registration guidebook</a> -->
-          </div>
-        </li>
-      </ul>
-    </div>
-    <!-- REGISTER -->
-    <a href="submissions.html" class="btn btn-success nav-register text-uppercase">Register</a>
-  </nav>
-
+              <a class="dropdown-item" download href="../downloads/ICST2019-presentation-guidelines.pdf">Presentation guidelines</a>
+              <a class="dropdown-item" download href="../downloads/ICST2019-registration-guidebook.pdf">Registration guidebook</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- REGISTER -->
+      <a href="submissions.html" class="btn btn-success nav-register text-uppercase">Register</a>
+    </nav>
+    
     <!-- BREADCRUMBS -->
     <div class="container">
       <nav class="breadcrumb" style="background-color: transparent">
         <a class="breadcrumb-item" href="../index.html">Home</a>
-        <span class="breadcrumb-item active">Conference fees</span>
+        <a class="breadcrumb-item" href="../article/fees.html">Conference fees</a>
+        <span class="breadcrumb-item active">Calculator</span>
       </nav>
     </div>
-
-  <!-- CONTENT -->
-  <div class="container">
-    <h1>Conference fees calculator</h1>
-
-  <!-- CALCULATOR -->
-  <div><div><div>
-        <div class="col-md-12 mx-auto"><label class="radio-tile-group"><h3>Type of participation</h3></label>
-         <div class="radio-tile-group">
-          <div class="col-md-4 col-6">
-            <input id="presenteryes" class="radio-button" type="radio" value="1" name="presenter" />
-            <div class="radio-tile">
-              <div class="icon walk-icon py-1">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M96 256V96c0-53.019 42.981-96 96-96s96 42.981 96 96v160c0 53.019-42.981 96-96 96s-96-42.981-96-96zm252-56h-24c-6.627 0-12 5.373-12 12v42.68c0 66.217-53.082 120.938-119.298 121.318C126.213 376.38 72 322.402 72 256v-44c0-6.627-5.373-12-12-12H36c-6.627 0-12 5.373-12 12v44c0 84.488 62.693 154.597 144 166.278V468h-68c-6.627 0-12 5.373-12 12v20c0 6.627 5.373 12 12 12h184c6.627 0 12-5.373 12-12v-20c0-6.627-5.373-12-12-12h-68v-45.722c81.307-11.681 144-81.79 144-166.278v-44c0-6.627-5.373-12-12-12z"/>
-                </svg>
+    
+    <!-- CONTENT -->
+    <div class="container pb-5">
+      <h1>Calculate your expense</h1>
+      
+      <style type="text/css">
+        .radio-tile-group {
+          box-sizing: border-box;
+          font-family: 'Helvetica Neue', sans-serif;
+        }
+        
+        $primary-color: #1d73cc;
+        
+        .radio-tile-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        
+        .radio-tile-group {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        
+        .input-container {
+          position: relative;
+          height:  7rem;
+          width:  9rem;
+          margin: 0.5rem;
+        }
+        
+        .radio-button {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          cursor: pointer;
+        }
+        
+        .radio-tile {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          border: 2px solid #1d73cc;
+          border-radius: 5px;
+          padding: 1rem;
+          transition: transform 300ms ease;
+          background: white;
+        }
+        .icon svg {
+          fill: #1d73cc;
+          width: 3rem;
+          height: 3rem;
+        }
+        .radio-tile-label {
+          text-align: center;
+          font-size: 0.75rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: #1d73cc;
+        }
+        
+        .radio-button:checked + .radio-tile {
+          background-color: #1d73cc;
+          border: 2px solid #1d73cc;
+          color: white;
+          transform: scale(1.1, 1.1);
+        }
+        
+        .radio-button:checked + .radio-tile  .icon svg {
+          fill: white;
+          background-color: #1d73cc;
+        }
+        .radio-button:checked + .radio-tile  .radio-tile-label {
+          color: white;
+          background-color: #1d73cc;
+        }
+        .row {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          margin-right: -15px;
+          margin-left: -15px;
+        }
+        
+        @media (min-width: 576px) {
+          .row {
+            margin-right: -15px;
+            margin-left: -15px;
+          }
+        }
+        
+        @media (min-width: 768px) {
+          .row {
+            margin-right: -15px;
+            margin-left: -15px;
+          }
+        }
+        
+        @media (min-width: 992px) {
+          .row {
+            margin-right: -15px;
+            margin-left: -15px;
+          }
+        }
+        
+        @media (min-width: 1200px) {
+          .row {
+            margin-right: -15px;
+            margin-left: -15px;
+          }
+        }
+        .col-12 {
+          -webkit-box-flex: 0;
+          -webkit-flex: 0 0 100%;
+          -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+        .table-bordered thead th, .table-bordered thead td {
+          border-bottom-width: 2px;
+        }
+        .table thead th {
+          vertical-align: middle;
+          border-bottom: 2px solid #eceeef;
+        }
+        .table tbody td {
+          vertical-align: middle;
+          border-bottom: 2px solid #eceeef;
+        }
+        
+        .table-bordered th, .table-bordered td {
+          border: 1px solid #eceeef;
+        }
+        .text-center {
+          text-align: center !important;
+        }
+      </style>
+      <div class="tab-content" >
+        <div id="calculator" class ="tab-pane active" role="tabpanel">
+          <div class="row pt-5">
+            <div class="col-md-12 ml-auto mr-auto">
+              <br><label class="radio-tile-group"><b style="font-size: 18pt;">Type of participation</b></label>
+              <div class="radio-tile-group">
+                <div class="col-md-4 col-6">
+                  <input id="presenteryes" class="radio-button" type="radio" value="1" name="presenter" />
+                  <div class="radio-tile">
+                    <div class="icon walk-icon py-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M96 256V96c0-53.019 42.981-96 96-96s96 42.981 96 96v160c0 53.019-42.981 96-96 96s-96-42.981-96-96zm252-56h-24c-6.627 0-12 5.373-12 12v42.68c0 66.217-53.082 120.938-119.298 121.318C126.213 376.38 72 322.402 72 256v-44c0-6.627-5.373-12-12-12H36c-6.627 0-12 5.373-12 12v44c0 84.488 62.693 154.597 144 166.278V468h-68c-6.627 0-12 5.373-12 12v20c0 6.627 5.373 12 12 12h184c6.627 0 12-5.373 12-12v-20c0-6.627-5.373-12-12-12h-68v-45.722c81.307-11.681 144-81.79 144-166.278v-44c0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                    </div>
+                    <label for="presenteryes" class="radio-tile-label">Presenter</label>
+                  </div>
+                </div>          
+                <div class="col-md-4 col-6">
+                  <input id="presenterno" class="radio-button" type="radio" value="2" name="presenter" />
+                  <div class="radio-tile">
+                    <div class="icon bike-icon py-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M421.45 285.195L376 239.746V212c0-6.627 5.373-12 12-12h24c6.627 0 12 5.373 12 12v44c0 9.957-.881 19.71-2.55 29.195zM352 96c0-53.019-42.981-96-96-96-32.574 0-61.354 16.227-78.71 41.035L352 215.746V96zm152.971 363.716L52.284 7.029c-9.373-9.373-24.569-9.373-33.941 0L7.029 18.343c-9.372 9.373-9.372 24.568 0 33.941L160 205.254v49.577c0 53.089 43.436 97.452 96.524 97.167 14.626-.078 28.471-3.44 40.854-9.366l17.746 17.746c-17.529 9.971-37.794 15.666-59.372 15.622C189.355 375.864 136 321.053 136 254.656V212c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v44c0 84.488 62.693 154.597 144 166.278V468h-68c-6.627 0-12 5.373-12 12v20c0 6.627 5.373 12 12 12h184c6.627 0 12-5.373 12-12v-20c0-6.627-5.373-12-12-12h-68v-45.722c25.625-3.682 49.396-13.172 69.942-27.083L459.717 504.97c9.373 9.373 24.569 9.373 33.941 0l11.313-11.313c9.372-9.373 9.372-24.568 0-33.941z"/>
+                      </svg>
+                    </div>
+                    <label for="presenterno" class="radio-tile-label">Non-presenter</label>
+                  </div>
+                </div>
               </div>
-              <label for="presenteryes" class="radio-tile-label">Presenter</label>
-            </div>
-          </div>          
-          <div class="col-md-4 col-6">
-            <input id="presenterno" class="radio-button" type="radio" value="2" name="presenter" />
-            <div class="radio-tile">
-              <div class="icon bike-icon py-1">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M421.45 285.195L376 239.746V212c0-6.627 5.373-12 12-12h24c6.627 0 12 5.373 12 12v44c0 9.957-.881 19.71-2.55 29.195zM352 96c0-53.019-42.981-96-96-96-32.574 0-61.354 16.227-78.71 41.035L352 215.746V96zm152.971 363.716L52.284 7.029c-9.373-9.373-24.569-9.373-33.941 0L7.029 18.343c-9.372 9.373-9.372 24.568 0 33.941L160 205.254v49.577c0 53.089 43.436 97.452 96.524 97.167 14.626-.078 28.471-3.44 40.854-9.366l17.746 17.746c-17.529 9.971-37.794 15.666-59.372 15.622C189.355 375.864 136 321.053 136 254.656V212c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v44c0 84.488 62.693 154.597 144 166.278V468h-68c-6.627 0-12 5.373-12 12v20c0 6.627 5.373 12 12 12h184c6.627 0 12-5.373 12-12v-20c0-6.627-5.373-12-12-12h-68v-45.722c25.625-3.682 49.396-13.172 69.942-27.083L459.717 504.97c9.373 9.373 24.569 9.373 33.941 0l11.313-11.313c9.372-9.373 9.372-24.568 0-33.941z"/>
-                </svg>
+              <br><label class="radio-tile-group " id="121"><b style="font-size: 18pt";>Country</b></label>
+              <div class="form-group col-md-4 ml-auto mr-auto" id="122">
+                <select class="form-control" id="12" name="from2">
+                  <option value="AF">Afghanistan</option>
+                  <option value="AX">Åland Islands</option>
+                  <option value="AL">Albania</option>
+                  <option value="DZ">Algeria</option>
+                  <option value="AS">American Samoa</option>
+                  <option value="AD">Andorra</option>
+                  <option value="AO">Angola</option>
+                  <option value="AI">Anguilla</option>
+                  <option value="AQ">Antarctica</option>
+                  <option value="AG">Antigua and Barbuda</option>
+                  <option value="AR">Argentina</option>
+                  <option value="AM">Armenia</option>
+                  <option value="AW">Aruba</option>
+                  <option value="AU">Australia</option>
+                  <option value="AT">Austria</option>
+                  <option value="AZ">Azerbaijan</option>
+                  <option value="BS">Bahamas</option>
+                  <option value="BH">Bahrain</option>
+                  <option value="BD">Bangladesh</option>
+                  <option value="BB">Barbados</option>
+                  <option value="BY">Belarus</option>
+                  <option value="BE">Belgium</option>
+                  <option value="BZ">Belize</option>
+                  <option value="BJ">Benin</option>
+                  <option value="BM">Bermuda</option>
+                  <option value="BT">Bhutan</option>
+                  <option value="BO">Bolivia, Plurinational State of</option>
+                  <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                  <option value="BA">Bosnia and Herzegovina</option>
+                  <option value="BW">Botswana</option>
+                  <option value="BV">Bouvet Island</option>
+                  <option value="BR">Brazil</option>
+                  <option value="IO">British Indian Ocean Territory</option>
+                  <option value="BN">Brunei Darussalam</option>
+                  <option value="BG">Bulgaria</option>
+                  <option value="BF">Burkina Faso</option>
+                  <option value="BI">Burundi</option>
+                  <option value="KH">Cambodia</option>
+                  <option value="CM">Cameroon</option>
+                  <option value="CA">Canada</option>
+                  <option value="CV">Cape Verde</option>
+                  <option value="KY">Cayman Islands</option>
+                  <option value="CF">Central African Republic</option>
+                  <option value="TD">Chad</option>
+                  <option value="CL">Chile</option>
+                  <option value="CN">China</option>
+                  <option value="CX">Christmas Island</option>
+                  <option value="CC">Cocos (Keeling) Islands</option>
+                  <option value="CO">Colombia</option>
+                  <option value="KM">Comoros</option>
+                  <option value="CG">Congo</option>
+                  <option value="CD">Congo, the Democratic Republic of the</option>
+                  <option value="CK">Cook Islands</option>
+                  <option value="CR">Costa Rica</option>
+                  <option value="CI">Côte d'Ivoire</option>
+                  <option value="HR">Croatia</option>
+                  <option value="CU">Cuba</option>
+                  <option value="CW">Curaçao</option>
+                  <option value="CY">Cyprus</option>
+                  <option value="CZ">Czech Republic</option>
+                  <option value="DK">Denmark</option>
+                  <option value="DJ">Djibouti</option>
+                  <option value="DM">Dominica</option>
+                  <option value="DO">Dominican Republic</option>
+                  <option value="EC">Ecuador</option>
+                  <option value="EG">Egypt</option>
+                  <option value="SV">El Salvador</option>
+                  <option value="GQ">Equatorial Guinea</option>
+                  <option value="ER">Eritrea</option>
+                  <option value="EE">Estonia</option>
+                  <option value="ET">Ethiopia</option>
+                  <option value="FK">Falkland Islands (Malvinas)</option>
+                  <option value="FO">Faroe Islands</option>
+                  <option value="FJ">Fiji</option>
+                  <option value="FI">Finland</option>
+                  <option value="FR">France</option>
+                  <option value="GF">French Guiana</option>
+                  <option value="PF">French Polynesia</option>
+                  <option value="TF">French Southern Territories</option>
+                  <option value="GA">Gabon</option>
+                  <option value="GM">Gambia</option>
+                  <option value="GE">Georgia</option>
+                  <option value="DE">Germany</option>
+                  <option value="GH">Ghana</option>
+                  <option value="GI">Gibraltar</option>
+                  <option value="GR">Greece</option>
+                  <option value="GL">Greenland</option>
+                  <option value="GD">Grenada</option>
+                  <option value="GP">Guadeloupe</option>
+                  <option value="GU">Guam</option>
+                  <option value="GT">Guatemala</option>
+                  <option value="GG">Guernsey</option>
+                  <option value="GN">Guinea</option>
+                  <option value="GW">Guinea-Bissau</option>
+                  <option value="GY">Guyana</option>
+                  <option value="HT">Haiti</option>
+                  <option value="HM">Heard Island and McDonald Islands</option>
+                  <option value="VA">Holy See (Vatican City State)</option>
+                  <option value="HN">Honduras</option>
+                  <option value="HK">Hong Kong</option>
+                  <option value="HU">Hungary</option>
+                  <option value="IS">Iceland</option>
+                  <option value="IN">India</option>
+                  <option value="1">Indonesia</option>
+                  <option value="IR">Iran, Islamic Republic of</option>
+                  <option value="IQ">Iraq</option>
+                  <option value="IE">Ireland</option>
+                  <option value="IM">Isle of Man</option>
+                  <option value="IL">Israel</option>
+                  <option value="IT">Italy</option>
+                  <option value="JM">Jamaica</option>
+                  <option value="JP">Japan</option>
+                  <option value="JE">Jersey</option>
+                  <option value="JO">Jordan</option>
+                  <option value="KZ">Kazakhstan</option>
+                  <option value="KE">Kenya</option>
+                  <option value="KI">Kiribati</option>
+                  <option value="KP">Korea, Democratic People's Republic of</option>
+                  <option value="KR">Korea, Republic of</option>
+                  <option value="KW">Kuwait</option>
+                  <option value="KG">Kyrgyzstan</option>
+                  <option value="LA">Lao People's Democratic Republic</option>
+                  <option value="LV">Latvia</option>
+                  <option value="LB">Lebanon</option>
+                  <option value="LS">Lesotho</option>
+                  <option value="LR">Liberia</option>
+                  <option value="LY">Libya</option>
+                  <option value="LI">Liechtenstein</option>
+                  <option value="LT">Lithuania</option>
+                  <option value="LU">Luxembourg</option>
+                  <option value="MO">Macao</option>
+                  <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                  <option value="MG">Madagascar</option>
+                  <option value="MW">Malawi</option>
+                  <option value="MY">Malaysia</option>
+                  <option value="MV">Maldives</option>
+                  <option value="ML">Mali</option>
+                  <option value="MT">Malta</option>
+                  <option value="MH">Marshall Islands</option>
+                  <option value="MQ">Martinique</option>
+                  <option value="MR">Mauritania</option>
+                  <option value="MU">Mauritius</option>
+                  <option value="YT">Mayotte</option>
+                  <option value="MX">Mexico</option>
+                  <option value="FM">Micronesia, Federated States of</option>
+                  <option value="MD">Moldova, Republic of</option>
+                  <option value="MC">Monaco</option>
+                  <option value="MN">Mongolia</option>
+                  <option value="ME">Montenegro</option>
+                  <option value="MS">Montserrat</option>
+                  <option value="MA">Morocco</option>
+                  <option value="MZ">Mozambique</option>
+                  <option value="MM">Myanmar</option>
+                  <option value="NA">Namibia</option>
+                  <option value="NR">Nauru</option>
+                  <option value="NP">Nepal</option>
+                  <option value="NL">Netherlands</option>
+                  <option value="NC">New Caledonia</option>
+                  <option value="NZ">New Zealand</option>
+                  <option value="NI">Nicaragua</option>
+                  <option value="NE">Niger</option>
+                  <option value="NG">Nigeria</option>
+                  <option value="NU">Niue</option>
+                  <option value="NF">Norfolk Island</option>
+                  <option value="MP">Northern Mariana Islands</option>
+                  <option value="NO">Norway</option>
+                  <option value="OM">Oman</option>
+                  <option value="PK">Pakistan</option>
+                  <option value="PW">Palau</option>
+                  <option value="PS">Palestinian Territory, Occupied</option>
+                  <option value="PA">Panama</option>
+                  <option value="PG">Papua New Guinea</option>
+                  <option value="PY">Paraguay</option>
+                  <option value="PE">Peru</option>
+                  <option value="PH">Philippines</option>
+                  <option value="PN">Pitcairn</option>
+                  <option value="PL">Poland</option>
+                  <option value="PT">Portugal</option>
+                  <option value="PR">Puerto Rico</option>
+                  <option value="QA">Qatar</option>
+                  <option value="RE">Réunion</option>
+                  <option value="RO">Romania</option>
+                  <option value="RU">Russian Federation</option>
+                  <option value="RW">Rwanda</option>
+                  <option value="BL">Saint Barthélemy</option>
+                  <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                  <option value="KN">Saint Kitts and Nevis</option>
+                  <option value="LC">Saint Lucia</option>
+                  <option value="MF">Saint Martin (French part)</option>
+                  <option value="PM">Saint Pierre and Miquelon</option>
+                  <option value="VC">Saint Vincent and the Grenadines</option>
+                  <option value="WS">Samoa</option>
+                  <option value="SM">San Marino</option>
+                  <option value="ST">Sao Tome and Principe</option>
+                  <option value="SA">Saudi Arabia</option>
+                  <option value="SN">Senegal</option>
+                  <option value="RS">Serbia</option>
+                  <option value="SC">Seychelles</option>
+                  <option value="SL">Sierra Leone</option>
+                  <option value="SG">Singapore</option>
+                  <option value="SX">Sint Maarten (Dutch part)</option>
+                  <option value="SK">Slovakia</option>
+                  <option value="SI">Slovenia</option>
+                  <option value="SB">Solomon Islands</option>
+                  <option value="SO">Somalia</option>
+                  <option value="ZA">South Africa</option>
+                  <option value="GS">South Georgia and the South Sandwich Islands</option>
+                  <option value="SS">South Sudan</option>
+                  <option value="ES">Spain</option>
+                  <option value="LK">Sri Lanka</option>
+                  <option value="SD">Sudan</option>
+                  <option value="SR">Suriname</option>
+                  <option value="SJ">Svalbard and Jan Mayen</option>
+                  <option value="SZ">Swaziland</option>
+                  <option value="SE">Sweden</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="SY">Syrian Arab Republic</option>
+                  <option value="TW">Taiwan, Province of China</option>
+                  <option value="TJ">Tajikistan</option>
+                  <option value="TZ">Tanzania, United Republic of</option>
+                  <option value="TH">Thailand</option>
+                  <option value="TL">Timor-Leste</option>
+                  <option value="TG">Togo</option>
+                  <option value="TK">Tokelau</option>
+                  <option value="TO">Tonga</option>
+                  <option value="TT">Trinidad and Tobago</option>
+                  <option value="TN">Tunisia</option>
+                  <option value="TR">Turkey</option>
+                  <option value="TM">Turkmenistan</option>
+                  <option value="TC">Turks and Caicos Islands</option>
+                  <option value="TV">Tuvalu</option>
+                  <option value="UG">Uganda</option>
+                  <option value="UA">Ukraine</option>
+                  <option value="AE">United Arab Emirates</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="US">United States</option>
+                  <option value="UM">United States Minor Outlying Islands</option>
+                  <option value="UY">Uruguay</option>
+                  <option value="UZ">Uzbekistan</option>
+                  <option value="VU">Vanuatu</option>
+                  <option value="VE">Venezuela, Bolivarian Republic of</option>
+                  <option value="VN">Viet Nam</option>
+                  <option value="VG">Virgin Islands, British</option>
+                  <option value="VI">Virgin Islands, U.S.</option>
+                  <option value="WF">Wallis and Futuna</option>
+                  <option value="EH">Western Sahara</option>
+                  <option value="YE">Yemen</option>
+                  <option value="ZM">Zambia</option>
+                  <option value="ZW">Zimbabwe</option>
+                </select>
               </div>
-              <label for="presenterno" class="radio-tile-label">Non-presenter</label>
+              <label class="radio-tile-group " id="11" name="from"><b style="font-size: 18pt";>Country</b></label>
+              <div class="form-group col-md-4 ml-auto mr-auto" id="111">
+                <select class="form-control" id="1">
+                  <option value="AF">Afghanistan</option>
+                  <option value="AX">Åland Islands</option>
+                  <option value="AL">Albania</option>
+                  <option value="DZ">Algeria</option>
+                  <option value="AS">American Samoa</option>
+                  <option value="AD">Andorra</option>
+                  <option value="AO">Angola</option>
+                  <option value="AI">Anguilla</option>
+                  <option value="AQ">Antarctica</option>
+                  <option value="AG">Antigua and Barbuda</option>
+                  <option value="AR">Argentina</option>
+                  <option value="AM">Armenia</option>
+                  <option value="AW">Aruba</option>
+                  <option value="AU">Australia</option>
+                  <option value="AT">Austria</option>
+                  <option value="AZ">Azerbaijan</option>
+                  <option value="BS">Bahamas</option>
+                  <option value="BH">Bahrain</option>
+                  <option value="BD">Bangladesh</option>
+                  <option value="BB">Barbados</option>
+                  <option value="BY">Belarus</option>
+                  <option value="BE">Belgium</option>
+                  <option value="BZ">Belize</option>
+                  <option value="BJ">Benin</option>
+                  <option value="BM">Bermuda</option>
+                  <option value="BT">Bhutan</option>
+                  <option value="BO">Bolivia, Plurinational State of</option>
+                  <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                  <option value="BA">Bosnia and Herzegovina</option>
+                  <option value="BW">Botswana</option>
+                  <option value="BV">Bouvet Island</option>
+                  <option value="BR">Brazil</option>
+                  <option value="IO">British Indian Ocean Territory</option>
+                  <option value="BN">Brunei Darussalam</option>
+                  <option value="BG">Bulgaria</option>
+                  <option value="BF">Burkina Faso</option>
+                  <option value="BI">Burundi</option>
+                  <option value="KH">Cambodia</option>
+                  <option value="CM">Cameroon</option>
+                  <option value="CA">Canada</option>
+                  <option value="CV">Cape Verde</option>
+                  <option value="KY">Cayman Islands</option>
+                  <option value="CF">Central African Republic</option>
+                  <option value="TD">Chad</option>
+                  <option value="CL">Chile</option>
+                  <option value="CN">China</option>
+                  <option value="CX">Christmas Island</option>
+                  <option value="CC">Cocos (Keeling) Islands</option>
+                  <option value="CO">Colombia</option>
+                  <option value="KM">Comoros</option>
+                  <option value="CG">Congo</option>
+                  <option value="CD">Congo, the Democratic Republic of the</option>
+                  <option value="CK">Cook Islands</option>
+                  <option value="CR">Costa Rica</option>
+                  <option value="CI">Côte d'Ivoire</option>
+                  <option value="HR">Croatia</option>
+                  <option value="CU">Cuba</option>
+                  <option value="CW">Curaçao</option>
+                  <option value="CY">Cyprus</option>
+                  <option value="CZ">Czech Republic</option>
+                  <option value="DK">Denmark</option>
+                  <option value="DJ">Djibouti</option>
+                  <option value="DM">Dominica</option>
+                  <option value="DO">Dominican Republic</option>
+                  <option value="EC">Ecuador</option>
+                  <option value="EG">Egypt</option>
+                  <option value="SV">El Salvador</option>
+                  <option value="GQ">Equatorial Guinea</option>
+                  <option value="ER">Eritrea</option>
+                  <option value="EE">Estonia</option>
+                  <option value="ET">Ethiopia</option>
+                  <option value="FK">Falkland Islands (Malvinas)</option>
+                  <option value="FO">Faroe Islands</option>
+                  <option value="FJ">Fiji</option>
+                  <option value="FI">Finland</option>
+                  <option value="FR">France</option>
+                  <option value="GF">French Guiana</option>
+                  <option value="PF">French Polynesia</option>
+                  <option value="TF">French Southern Territories</option>
+                  <option value="GA">Gabon</option>
+                  <option value="GM">Gambia</option>
+                  <option value="GE">Georgia</option>
+                  <option value="DE">Germany</option>
+                  <option value="GH">Ghana</option>
+                  <option value="GI">Gibraltar</option>
+                  <option value="GR">Greece</option>
+                  <option value="GL">Greenland</option>
+                  <option value="GD">Grenada</option>
+                  <option value="GP">Guadeloupe</option>
+                  <option value="GU">Guam</option>
+                  <option value="GT">Guatemala</option>
+                  <option value="GG">Guernsey</option>
+                  <option value="GN">Guinea</option>
+                  <option value="GW">Guinea-Bissau</option>
+                  <option value="GY">Guyana</option>
+                  <option value="HT">Haiti</option>
+                  <option value="HM">Heard Island and McDonald Islands</option>
+                  <option value="VA">Holy See (Vatican City State)</option>
+                  <option value="HN">Honduras</option>
+                  <option value="HK">Hong Kong</option>
+                  <option value="HU">Hungary</option>
+                  <option value="IS">Iceland</option>
+                  <option value="IN">India</option>
+                  <option value="1">Indonesia</option>
+                  <option value="IR">Iran, Islamic Republic of</option>
+                  <option value="IQ">Iraq</option>
+                  <option value="IE">Ireland</option>
+                  <option value="IM">Isle of Man</option>
+                  <option value="IL">Israel</option>
+                  <option value="IT">Italy</option>
+                  <option value="JM">Jamaica</option>
+                  <option value="JP">Japan</option>
+                  <option value="JE">Jersey</option>
+                  <option value="JO">Jordan</option>
+                  <option value="KZ">Kazakhstan</option>
+                  <option value="KE">Kenya</option>
+                  <option value="KI">Kiribati</option>
+                  <option value="KP">Korea, Democratic People's Republic of</option>
+                  <option value="KR">Korea, Republic of</option>
+                  <option value="KW">Kuwait</option>
+                  <option value="KG">Kyrgyzstan</option>
+                  <option value="LA">Lao People's Democratic Republic</option>
+                  <option value="LV">Latvia</option>
+                  <option value="LB">Lebanon</option>
+                  <option value="LS">Lesotho</option>
+                  <option value="LR">Liberia</option>
+                  <option value="LY">Libya</option>
+                  <option value="LI">Liechtenstein</option>
+                  <option value="LT">Lithuania</option>
+                  <option value="LU">Luxembourg</option>
+                  <option value="MO">Macao</option>
+                  <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                  <option value="MG">Madagascar</option>
+                  <option value="MW">Malawi</option>
+                  <option value="MY">Malaysia</option>
+                  <option value="MV">Maldives</option>
+                  <option value="ML">Mali</option>
+                  <option value="MT">Malta</option>
+                  <option value="MH">Marshall Islands</option>
+                  <option value="MQ">Martinique</option>
+                  <option value="MR">Mauritania</option>
+                  <option value="MU">Mauritius</option>
+                  <option value="YT">Mayotte</option>
+                  <option value="MX">Mexico</option>
+                  <option value="FM">Micronesia, Federated States of</option>
+                  <option value="MD">Moldova, Republic of</option>
+                  <option value="MC">Monaco</option>
+                  <option value="MN">Mongolia</option>
+                  <option value="ME">Montenegro</option>
+                  <option value="MS">Montserrat</option>
+                  <option value="MA">Morocco</option>
+                  <option value="MZ">Mozambique</option>
+                  <option value="MM">Myanmar</option>
+                  <option value="NA">Namibia</option>
+                  <option value="NR">Nauru</option>
+                  <option value="NP">Nepal</option>
+                  <option value="NL">Netherlands</option>
+                  <option value="NC">New Caledonia</option>
+                  <option value="NZ">New Zealand</option>
+                  <option value="NI">Nicaragua</option>
+                  <option value="NE">Niger</option>
+                  <option value="NG">Nigeria</option>
+                  <option value="NU">Niue</option>
+                  <option value="NF">Norfolk Island</option>
+                  <option value="MP">Northern Mariana Islands</option>
+                  <option value="NO">Norway</option>
+                  <option value="OM">Oman</option>
+                  <option value="PK">Pakistan</option>
+                  <option value="PW">Palau</option>
+                  <option value="PS">Palestinian Territory, Occupied</option>
+                  <option value="PA">Panama</option>
+                  <option value="PG">Papua New Guinea</option>
+                  <option value="PY">Paraguay</option>
+                  <option value="PE">Peru</option>
+                  <option value="PH">Philippines</option>
+                  <option value="PN">Pitcairn</option>
+                  <option value="PL">Poland</option>
+                  <option value="PT">Portugal</option>
+                  <option value="PR">Puerto Rico</option>
+                  <option value="QA">Qatar</option>
+                  <option value="RE">Réunion</option>
+                  <option value="RO">Romania</option>
+                  <option value="RU">Russian Federation</option>
+                  <option value="RW">Rwanda</option>
+                  <option value="BL">Saint Barthélemy</option>
+                  <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                  <option value="KN">Saint Kitts and Nevis</option>
+                  <option value="LC">Saint Lucia</option>
+                  <option value="MF">Saint Martin (French part)</option>
+                  <option value="PM">Saint Pierre and Miquelon</option>
+                  <option value="VC">Saint Vincent and the Grenadines</option>
+                  <option value="WS">Samoa</option>
+                  <option value="SM">San Marino</option>
+                  <option value="ST">Sao Tome and Principe</option>
+                  <option value="SA">Saudi Arabia</option>
+                  <option value="SN">Senegal</option>
+                  <option value="RS">Serbia</option>
+                  <option value="SC">Seychelles</option>
+                  <option value="SL">Sierra Leone</option>
+                  <option value="SG">Singapore</option>
+                  <option value="SX">Sint Maarten (Dutch part)</option>
+                  <option value="SK">Slovakia</option>
+                  <option value="SI">Slovenia</option>
+                  <option value="SB">Solomon Islands</option>
+                  <option value="SO">Somalia</option>
+                  <option value="ZA">South Africa</option>
+                  <option value="GS">South Georgia and the South Sandwich Islands</option>
+                  <option value="SS">South Sudan</option>
+                  <option value="ES">Spain</option>
+                  <option value="LK">Sri Lanka</option>
+                  <option value="SD">Sudan</option>
+                  <option value="SR">Suriname</option>
+                  <option value="SJ">Svalbard and Jan Mayen</option>
+                  <option value="SZ">Swaziland</option>
+                  <option value="SE">Sweden</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="SY">Syrian Arab Republic</option>
+                  <option value="TW">Taiwan, Province of China</option>
+                  <option value="TJ">Tajikistan</option>
+                  <option value="TZ">Tanzania, United Republic of</option>
+                  <option value="TH">Thailand</option>
+                  <option value="TL">Timor-Leste</option>
+                  <option value="TG">Togo</option>
+                  <option value="TK">Tokelau</option>
+                  <option value="TO">Tonga</option>
+                  <option value="TT">Trinidad and Tobago</option>
+                  <option value="TN">Tunisia</option>
+                  <option value="TR">Turkey</option>
+                  <option value="TM">Turkmenistan</option>
+                  <option value="TC">Turks and Caicos Islands</option>
+                  <option value="TV">Tuvalu</option>
+                  <option value="UG">Uganda</option>
+                  <option value="UA">Ukraine</option>
+                  <option value="AE">United Arab Emirates</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="US">United States</option>
+                  <option value="UM">United States Minor Outlying Islands</option>
+                  <option value="UY">Uruguay</option>
+                  <option value="UZ">Uzbekistan</option>
+                  <option value="VU">Vanuatu</option>
+                  <option value="VE">Venezuela, Bolivarian Republic of</option>
+                  <option value="VN">Viet Nam</option>
+                  <option value="VG">Virgin Islands, British</option>
+                  <option value="VI">Virgin Islands, U.S.</option>
+                  <option value="WF">Wallis and Futuna</option>
+                  <option value="EH">Western Sahara</option>
+                  <option value="YE">Yemen</option>
+                  <option value="ZM">Zambia</option>
+                  <option value="ZW">Zimbabwe</option>
+                </select>
+              </div>
+              
+              <label class="radio-tile-group" id="21"><b style="font-size: 18pt;">Status</b></label>
+              <div class="radio-tile-group" id="2">
+                <div class="col-md-4 col-6">
+                  <input id="drive" class="radio-button" type="radio" value="1" name="student" />
+                  <div class="radio-tile">
+                    <div class="icon car-icon py-3 py-md-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M319.4 320.6L224 416l-95.4-95.4C57.1 323.7 0 382.2 0 454.4v9.6c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-9.6c0-72.2-57.1-130.7-128.6-133.8zM13.6 79.8l6.4 1.5v58.4c-7 4.2-12 11.5-12 20.3 0 8.4 4.6 15.4 11.1 19.7L3.5 242c-1.7 6.9 2.1 14 7.6 14h41.8c5.5 0 9.3-7.1 7.6-14l-15.6-62.3C51.4 175.4 56 168.4 56 160c0-8.8-5-16.1-12-20.3V87.1l66 15.9c-8.6 17.2-14 36.4-14 57 0 70.7 57.3 128 128 128s128-57.3 128-128c0-20.6-5.3-39.8-14-57l96.3-23.2c18.2-4.4 18.2-27.1 0-31.5l-190.4-46c-13-3.1-26.7-3.1-39.7 0L13.6 48.2c-18.1 4.4-18.1 27.2 0 31.6z"/>
+                      </svg>
+                    </div>
+                    <label for="drive" class="radio-tile-label">Student</label>
+                  </div>
+                </div>
+                
+                <div class="col-md-4 col-6">
+                  <input id="fly" class="radio-button" type="radio" value="2" name="student" />
+                  <div class="radio-tile">
+                    <div class="icon fly-icon py-3 py-md-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"/>
+                      </svg>
+                    </div>
+                    <label for="fly" class="radio-tile-label">Non-student</label>
+                  </div>
+                </div>
+              </div>
+              
+              <br><label class="radio-tile-group" id="31"><b style="font-size: 18pt;">IEEE membership </b></label>
+              <div class="radio-tile-group" id="3">
+                <div class="col-md-4 col-6">
+                  <input id="drive" class="radio-button" type="radio" value="1" name="ieee" />
+                  <div class="radio-tile">
+                    <div class="icon car-icon py-3 py-md-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zm323-128.4l-27.8-28.1c-4.6-4.7-12.1-4.7-16.8-.1l-104.8 104-45.5-45.8c-4.6-4.7-12.1-4.7-16.8-.1l-28.1 27.9c-4.7 4.6-4.7 12.1-.1 16.8l81.7 82.3c4.6 4.7 12.1 4.7 16.8.1l141.3-140.2c4.6-4.7 4.7-12.2.1-16.8z"/>
+                      </svg>
+                    </div>
+                    <label for="drive" class="radio-tile-label">IEEE Member</label>
+                  </div>
+                </div>
+                
+                <div class="col-md-4 col-6">
+                  <input id="fly" class="radio-button" type="radio" value="2" name="ieee" />
+                  <div class="radio-tile">
+                    <div class="icon fly-icon py-3 py-md-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M589.6 240l45.6-45.6c6.3-6.3 6.3-16.5 0-22.8l-22.8-22.8c-6.3-6.3-16.5-6.3-22.8 0L544 194.4l-45.6-45.6c-6.3-6.3-16.5-6.3-22.8 0l-22.8 22.8c-6.3 6.3-6.3 16.5 0 22.8l45.6 45.6-45.6 45.6c-6.3 6.3-6.3 16.5 0 22.8l22.8 22.8c6.3 6.3 16.5 6.3 22.8 0l45.6-45.6 45.6 45.6c6.3 6.3 16.5 6.3 22.8 0l22.8-22.8c6.3-6.3 6.3-16.5 0-22.8L589.6 240zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/>
+                      </svg>
+                    </div>
+                    <label for="fly" class="radio-tile-label">Non-member</label>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="radio-tile-container">
+                <div class="radio-tile-group" id="numofpaper"  class="form-control">
+                  <label class="radio-inline"><b style="font-size: 18pt;">Amount of papers </b>
+                    <input type="text" class="form-control" name="numofpaper" id="text">
+                  </label>
+                </div>
+                <div class="radio-tile-group" id="btncount"  class="form-control">
+                  <input type="button" class="btn btn-success pull-left text-uppercase" name="count" id="count" value="Calculate" data-toggle="modal">
+                </div><br>
+              </div>
             </div>
           </div>
         </div>
-        <label class="radio-tile-group " id="121"><h3 class="pt-3">Country</h3></label>
-        <div class="form-group col-md-4 ml-auto mr-auto" id="122">
-          <select class="form-control" id="12" name="from2">
-            <option value="AF">Afghanistan</option>
-            <option value="AX">Åland Islands</option>
-            <option value="AL">Albania</option>
-            <option value="DZ">Algeria</option>
-            <option value="AS">American Samoa</option>
-            <option value="AD">Andorra</option>
-            <option value="AO">Angola</option>
-            <option value="AI">Anguilla</option>
-            <option value="AQ">Antarctica</option>
-            <option value="AG">Antigua and Barbuda</option>
-            <option value="AR">Argentina</option>
-            <option value="AM">Armenia</option>
-            <option value="AW">Aruba</option>
-            <option value="AU">Australia</option>
-            <option value="AT">Austria</option>
-            <option value="AZ">Azerbaijan</option>
-            <option value="BS">Bahamas</option>
-            <option value="BH">Bahrain</option>
-            <option value="BD">Bangladesh</option>
-            <option value="BB">Barbados</option>
-            <option value="BY">Belarus</option>
-            <option value="BE">Belgium</option>
-            <option value="BZ">Belize</option>
-            <option value="BJ">Benin</option>
-            <option value="BM">Bermuda</option>
-            <option value="BT">Bhutan</option>
-            <option value="BO">Bolivia, Plurinational State of</option>
-            <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
-            <option value="BA">Bosnia and Herzegovina</option>
-            <option value="BW">Botswana</option>
-            <option value="BV">Bouvet Island</option>
-            <option value="BR">Brazil</option>
-            <option value="IO">British Indian Ocean Territory</option>
-            <option value="BN">Brunei Darussalam</option>
-            <option value="BG">Bulgaria</option>
-            <option value="BF">Burkina Faso</option>
-            <option value="BI">Burundi</option>
-            <option value="KH">Cambodia</option>
-            <option value="CM">Cameroon</option>
-            <option value="CA">Canada</option>
-            <option value="CV">Cape Verde</option>
-            <option value="KY">Cayman Islands</option>
-            <option value="CF">Central African Republic</option>
-            <option value="TD">Chad</option>
-            <option value="CL">Chile</option>
-            <option value="CN">China</option>
-            <option value="CX">Christmas Island</option>
-            <option value="CC">Cocos (Keeling) Islands</option>
-            <option value="CO">Colombia</option>
-            <option value="KM">Comoros</option>
-            <option value="CG">Congo</option>
-            <option value="CD">Congo, the Democratic Republic of the</option>
-            <option value="CK">Cook Islands</option>
-            <option value="CR">Costa Rica</option>
-            <option value="CI">Côte d'Ivoire</option>
-            <option value="HR">Croatia</option>
-            <option value="CU">Cuba</option>
-            <option value="CW">Curaçao</option>
-            <option value="CY">Cyprus</option>
-            <option value="CZ">Czech Republic</option>
-            <option value="DK">Denmark</option>
-            <option value="DJ">Djibouti</option>
-            <option value="DM">Dominica</option>
-            <option value="DO">Dominican Republic</option>
-            <option value="EC">Ecuador</option>
-            <option value="EG">Egypt</option>
-            <option value="SV">El Salvador</option>
-            <option value="GQ">Equatorial Guinea</option>
-            <option value="ER">Eritrea</option>
-            <option value="EE">Estonia</option>
-            <option value="ET">Ethiopia</option>
-            <option value="FK">Falkland Islands (Malvinas)</option>
-            <option value="FO">Faroe Islands</option>
-            <option value="FJ">Fiji</option>
-            <option value="FI">Finland</option>
-            <option value="FR">France</option>
-            <option value="GF">French Guiana</option>
-            <option value="PF">French Polynesia</option>
-            <option value="TF">French Southern Territories</option>
-            <option value="GA">Gabon</option>
-            <option value="GM">Gambia</option>
-            <option value="GE">Georgia</option>
-            <option value="DE">Germany</option>
-            <option value="GH">Ghana</option>
-            <option value="GI">Gibraltar</option>
-            <option value="GR">Greece</option>
-            <option value="GL">Greenland</option>
-            <option value="GD">Grenada</option>
-            <option value="GP">Guadeloupe</option>
-            <option value="GU">Guam</option>
-            <option value="GT">Guatemala</option>
-            <option value="GG">Guernsey</option>
-            <option value="GN">Guinea</option>
-            <option value="GW">Guinea-Bissau</option>
-            <option value="GY">Guyana</option>
-            <option value="HT">Haiti</option>
-            <option value="HM">Heard Island and McDonald Islands</option>
-            <option value="VA">Holy See (Vatican City State)</option>
-            <option value="HN">Honduras</option>
-            <option value="HK">Hong Kong</option>
-            <option value="HU">Hungary</option>
-            <option value="IS">Iceland</option>
-            <option value="IN">India</option>
-            <option value="1">Indonesia</option>
-            <option value="IR">Iran, Islamic Republic of</option>
-            <option value="IQ">Iraq</option>
-            <option value="IE">Ireland</option>
-            <option value="IM">Isle of Man</option>
-            <option value="IL">Israel</option>
-            <option value="IT">Italy</option>
-            <option value="JM">Jamaica</option>
-            <option value="JP">Japan</option>
-            <option value="JE">Jersey</option>
-            <option value="JO">Jordan</option>
-            <option value="KZ">Kazakhstan</option>
-            <option value="KE">Kenya</option>
-            <option value="KI">Kiribati</option>
-            <option value="KP">Korea, Democratic People's Republic of</option>
-            <option value="KR">Korea, Republic of</option>
-            <option value="KW">Kuwait</option>
-            <option value="KG">Kyrgyzstan</option>
-            <option value="LA">Lao People's Democratic Republic</option>
-            <option value="LV">Latvia</option>
-            <option value="LB">Lebanon</option>
-            <option value="LS">Lesotho</option>
-            <option value="LR">Liberia</option>
-            <option value="LY">Libya</option>
-            <option value="LI">Liechtenstein</option>
-            <option value="LT">Lithuania</option>
-            <option value="LU">Luxembourg</option>
-            <option value="MO">Macao</option>
-            <option value="MK">Macedonia, the former Yugoslav Republic of</option>
-            <option value="MG">Madagascar</option>
-            <option value="MW">Malawi</option>
-            <option value="MY">Malaysia</option>
-            <option value="MV">Maldives</option>
-            <option value="ML">Mali</option>
-            <option value="MT">Malta</option>
-            <option value="MH">Marshall Islands</option>
-            <option value="MQ">Martinique</option>
-            <option value="MR">Mauritania</option>
-            <option value="MU">Mauritius</option>
-            <option value="YT">Mayotte</option>
-            <option value="MX">Mexico</option>
-            <option value="FM">Micronesia, Federated States of</option>
-            <option value="MD">Moldova, Republic of</option>
-            <option value="MC">Monaco</option>
-            <option value="MN">Mongolia</option>
-            <option value="ME">Montenegro</option>
-            <option value="MS">Montserrat</option>
-            <option value="MA">Morocco</option>
-            <option value="MZ">Mozambique</option>
-            <option value="MM">Myanmar</option>
-            <option value="NA">Namibia</option>
-            <option value="NR">Nauru</option>
-            <option value="NP">Nepal</option>
-            <option value="NL">Netherlands</option>
-            <option value="NC">New Caledonia</option>
-            <option value="NZ">New Zealand</option>
-            <option value="NI">Nicaragua</option>
-            <option value="NE">Niger</option>
-            <option value="NG">Nigeria</option>
-            <option value="NU">Niue</option>
-            <option value="NF">Norfolk Island</option>
-            <option value="MP">Northern Mariana Islands</option>
-            <option value="NO">Norway</option>
-            <option value="OM">Oman</option>
-            <option value="PK">Pakistan</option>
-            <option value="PW">Palau</option>
-            <option value="PS">Palestinian Territory, Occupied</option>
-            <option value="PA">Panama</option>
-            <option value="PG">Papua New Guinea</option>
-            <option value="PY">Paraguay</option>
-            <option value="PE">Peru</option>
-            <option value="PH">Philippines</option>
-            <option value="PN">Pitcairn</option>
-            <option value="PL">Poland</option>
-            <option value="PT">Portugal</option>
-            <option value="PR">Puerto Rico</option>
-            <option value="QA">Qatar</option>
-            <option value="RE">Réunion</option>
-            <option value="RO">Romania</option>
-            <option value="RU">Russian Federation</option>
-            <option value="RW">Rwanda</option>
-            <option value="BL">Saint Barthélemy</option>
-            <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
-            <option value="KN">Saint Kitts and Nevis</option>
-            <option value="LC">Saint Lucia</option>
-            <option value="MF">Saint Martin (French part)</option>
-            <option value="PM">Saint Pierre and Miquelon</option>
-            <option value="VC">Saint Vincent and the Grenadines</option>
-            <option value="WS">Samoa</option>
-            <option value="SM">San Marino</option>
-            <option value="ST">Sao Tome and Principe</option>
-            <option value="SA">Saudi Arabia</option>
-            <option value="SN">Senegal</option>
-            <option value="RS">Serbia</option>
-            <option value="SC">Seychelles</option>
-            <option value="SL">Sierra Leone</option>
-            <option value="SG">Singapore</option>
-            <option value="SX">Sint Maarten (Dutch part)</option>
-            <option value="SK">Slovakia</option>
-            <option value="SI">Slovenia</option>
-            <option value="SB">Solomon Islands</option>
-            <option value="SO">Somalia</option>
-            <option value="ZA">South Africa</option>
-            <option value="GS">South Georgia and the South Sandwich Islands</option>
-            <option value="SS">South Sudan</option>
-            <option value="ES">Spain</option>
-            <option value="LK">Sri Lanka</option>
-            <option value="SD">Sudan</option>
-            <option value="SR">Suriname</option>
-            <option value="SJ">Svalbard and Jan Mayen</option>
-            <option value="SZ">Swaziland</option>
-            <option value="SE">Sweden</option>
-            <option value="CH">Switzerland</option>
-            <option value="SY">Syrian Arab Republic</option>
-            <option value="TW">Taiwan, Province of China</option>
-            <option value="TJ">Tajikistan</option>
-            <option value="TZ">Tanzania, United Republic of</option>
-            <option value="TH">Thailand</option>
-            <option value="TL">Timor-Leste</option>
-            <option value="TG">Togo</option>
-            <option value="TK">Tokelau</option>
-            <option value="TO">Tonga</option>
-            <option value="TT">Trinidad and Tobago</option>
-            <option value="TN">Tunisia</option>
-            <option value="TR">Turkey</option>
-            <option value="TM">Turkmenistan</option>
-            <option value="TC">Turks and Caicos Islands</option>
-            <option value="TV">Tuvalu</option>
-            <option value="UG">Uganda</option>
-            <option value="UA">Ukraine</option>
-            <option value="AE">United Arab Emirates</option>
-            <option value="GB">United Kingdom</option>
-            <option value="US">United States</option>
-            <option value="UM">United States Minor Outlying Islands</option>
-            <option value="UY">Uruguay</option>
-            <option value="UZ">Uzbekistan</option>
-            <option value="VU">Vanuatu</option>
-            <option value="VE">Venezuela, Bolivarian Republic of</option>
-            <option value="VN">Viet Nam</option>
-            <option value="VG">Virgin Islands, British</option>
-            <option value="VI">Virgin Islands, U.S.</option>
-            <option value="WF">Wallis and Futuna</option>
-            <option value="EH">Western Sahara</option>
-            <option value="YE">Yemen</option>
-            <option value="ZM">Zambia</option>
-            <option value="ZW">Zimbabwe</option>
-          </select>
-        </div>
-        <label class="radio-tile-group " id="11" name="from"><h3 class="pt-3">Country</h3></label>
-        <div class="form-group col-md-4 ml-auto mr-auto" id="111">
-          <select class="form-control" id="1">
-            <option value="AF">Afghanistan</option>
-            <option value="AX">Åland Islands</option>
-            <option value="AL">Albania</option>
-            <option value="DZ">Algeria</option>
-            <option value="AS">American Samoa</option>
-            <option value="AD">Andorra</option>
-            <option value="AO">Angola</option>
-            <option value="AI">Anguilla</option>
-            <option value="AQ">Antarctica</option>
-            <option value="AG">Antigua and Barbuda</option>
-            <option value="AR">Argentina</option>
-            <option value="AM">Armenia</option>
-            <option value="AW">Aruba</option>
-            <option value="AU">Australia</option>
-            <option value="AT">Austria</option>
-            <option value="AZ">Azerbaijan</option>
-            <option value="BS">Bahamas</option>
-            <option value="BH">Bahrain</option>
-            <option value="BD">Bangladesh</option>
-            <option value="BB">Barbados</option>
-            <option value="BY">Belarus</option>
-            <option value="BE">Belgium</option>
-            <option value="BZ">Belize</option>
-            <option value="BJ">Benin</option>
-            <option value="BM">Bermuda</option>
-            <option value="BT">Bhutan</option>
-            <option value="BO">Bolivia, Plurinational State of</option>
-            <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
-            <option value="BA">Bosnia and Herzegovina</option>
-            <option value="BW">Botswana</option>
-            <option value="BV">Bouvet Island</option>
-            <option value="BR">Brazil</option>
-            <option value="IO">British Indian Ocean Territory</option>
-            <option value="BN">Brunei Darussalam</option>
-            <option value="BG">Bulgaria</option>
-            <option value="BF">Burkina Faso</option>
-            <option value="BI">Burundi</option>
-            <option value="KH">Cambodia</option>
-            <option value="CM">Cameroon</option>
-            <option value="CA">Canada</option>
-            <option value="CV">Cape Verde</option>
-            <option value="KY">Cayman Islands</option>
-            <option value="CF">Central African Republic</option>
-            <option value="TD">Chad</option>
-            <option value="CL">Chile</option>
-            <option value="CN">China</option>
-            <option value="CX">Christmas Island</option>
-            <option value="CC">Cocos (Keeling) Islands</option>
-            <option value="CO">Colombia</option>
-            <option value="KM">Comoros</option>
-            <option value="CG">Congo</option>
-            <option value="CD">Congo, the Democratic Republic of the</option>
-            <option value="CK">Cook Islands</option>
-            <option value="CR">Costa Rica</option>
-            <option value="CI">Côte d'Ivoire</option>
-            <option value="HR">Croatia</option>
-            <option value="CU">Cuba</option>
-            <option value="CW">Curaçao</option>
-            <option value="CY">Cyprus</option>
-            <option value="CZ">Czech Republic</option>
-            <option value="DK">Denmark</option>
-            <option value="DJ">Djibouti</option>
-            <option value="DM">Dominica</option>
-            <option value="DO">Dominican Republic</option>
-            <option value="EC">Ecuador</option>
-            <option value="EG">Egypt</option>
-            <option value="SV">El Salvador</option>
-            <option value="GQ">Equatorial Guinea</option>
-            <option value="ER">Eritrea</option>
-            <option value="EE">Estonia</option>
-            <option value="ET">Ethiopia</option>
-            <option value="FK">Falkland Islands (Malvinas)</option>
-            <option value="FO">Faroe Islands</option>
-            <option value="FJ">Fiji</option>
-            <option value="FI">Finland</option>
-            <option value="FR">France</option>
-            <option value="GF">French Guiana</option>
-            <option value="PF">French Polynesia</option>
-            <option value="TF">French Southern Territories</option>
-            <option value="GA">Gabon</option>
-            <option value="GM">Gambia</option>
-            <option value="GE">Georgia</option>
-            <option value="DE">Germany</option>
-            <option value="GH">Ghana</option>
-            <option value="GI">Gibraltar</option>
-            <option value="GR">Greece</option>
-            <option value="GL">Greenland</option>
-            <option value="GD">Grenada</option>
-            <option value="GP">Guadeloupe</option>
-            <option value="GU">Guam</option>
-            <option value="GT">Guatemala</option>
-            <option value="GG">Guernsey</option>
-            <option value="GN">Guinea</option>
-            <option value="GW">Guinea-Bissau</option>
-            <option value="GY">Guyana</option>
-            <option value="HT">Haiti</option>
-            <option value="HM">Heard Island and McDonald Islands</option>
-            <option value="VA">Holy See (Vatican City State)</option>
-            <option value="HN">Honduras</option>
-            <option value="HK">Hong Kong</option>
-            <option value="HU">Hungary</option>
-            <option value="IS">Iceland</option>
-            <option value="IN">India</option>
-            <option value="1">Indonesia</option>
-            <option value="IR">Iran, Islamic Republic of</option>
-            <option value="IQ">Iraq</option>
-            <option value="IE">Ireland</option>
-            <option value="IM">Isle of Man</option>
-            <option value="IL">Israel</option>
-            <option value="IT">Italy</option>
-            <option value="JM">Jamaica</option>
-            <option value="JP">Japan</option>
-            <option value="JE">Jersey</option>
-            <option value="JO">Jordan</option>
-            <option value="KZ">Kazakhstan</option>
-            <option value="KE">Kenya</option>
-            <option value="KI">Kiribati</option>
-            <option value="KP">Korea, Democratic People's Republic of</option>
-            <option value="KR">Korea, Republic of</option>
-            <option value="KW">Kuwait</option>
-            <option value="KG">Kyrgyzstan</option>
-            <option value="LA">Lao People's Democratic Republic</option>
-            <option value="LV">Latvia</option>
-            <option value="LB">Lebanon</option>
-            <option value="LS">Lesotho</option>
-            <option value="LR">Liberia</option>
-            <option value="LY">Libya</option>
-            <option value="LI">Liechtenstein</option>
-            <option value="LT">Lithuania</option>
-            <option value="LU">Luxembourg</option>
-            <option value="MO">Macao</option>
-            <option value="MK">Macedonia, the former Yugoslav Republic of</option>
-            <option value="MG">Madagascar</option>
-            <option value="MW">Malawi</option>
-            <option value="MY">Malaysia</option>
-            <option value="MV">Maldives</option>
-            <option value="ML">Mali</option>
-            <option value="MT">Malta</option>
-            <option value="MH">Marshall Islands</option>
-            <option value="MQ">Martinique</option>
-            <option value="MR">Mauritania</option>
-            <option value="MU">Mauritius</option>
-            <option value="YT">Mayotte</option>
-            <option value="MX">Mexico</option>
-            <option value="FM">Micronesia, Federated States of</option>
-            <option value="MD">Moldova, Republic of</option>
-            <option value="MC">Monaco</option>
-            <option value="MN">Mongolia</option>
-            <option value="ME">Montenegro</option>
-            <option value="MS">Montserrat</option>
-            <option value="MA">Morocco</option>
-            <option value="MZ">Mozambique</option>
-            <option value="MM">Myanmar</option>
-            <option value="NA">Namibia</option>
-            <option value="NR">Nauru</option>
-            <option value="NP">Nepal</option>
-            <option value="NL">Netherlands</option>
-            <option value="NC">New Caledonia</option>
-            <option value="NZ">New Zealand</option>
-            <option value="NI">Nicaragua</option>
-            <option value="NE">Niger</option>
-            <option value="NG">Nigeria</option>
-            <option value="NU">Niue</option>
-            <option value="NF">Norfolk Island</option>
-            <option value="MP">Northern Mariana Islands</option>
-            <option value="NO">Norway</option>
-            <option value="OM">Oman</option>
-            <option value="PK">Pakistan</option>
-            <option value="PW">Palau</option>
-            <option value="PS">Palestinian Territory, Occupied</option>
-            <option value="PA">Panama</option>
-            <option value="PG">Papua New Guinea</option>
-            <option value="PY">Paraguay</option>
-            <option value="PE">Peru</option>
-            <option value="PH">Philippines</option>
-            <option value="PN">Pitcairn</option>
-            <option value="PL">Poland</option>
-            <option value="PT">Portugal</option>
-            <option value="PR">Puerto Rico</option>
-            <option value="QA">Qatar</option>
-            <option value="RE">Réunion</option>
-            <option value="RO">Romania</option>
-            <option value="RU">Russian Federation</option>
-            <option value="RW">Rwanda</option>
-            <option value="BL">Saint Barthélemy</option>
-            <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
-            <option value="KN">Saint Kitts and Nevis</option>
-            <option value="LC">Saint Lucia</option>
-            <option value="MF">Saint Martin (French part)</option>
-            <option value="PM">Saint Pierre and Miquelon</option>
-            <option value="VC">Saint Vincent and the Grenadines</option>
-            <option value="WS">Samoa</option>
-            <option value="SM">San Marino</option>
-            <option value="ST">Sao Tome and Principe</option>
-            <option value="SA">Saudi Arabia</option>
-            <option value="SN">Senegal</option>
-            <option value="RS">Serbia</option>
-            <option value="SC">Seychelles</option>
-            <option value="SL">Sierra Leone</option>
-            <option value="SG">Singapore</option>
-            <option value="SX">Sint Maarten (Dutch part)</option>
-            <option value="SK">Slovakia</option>
-            <option value="SI">Slovenia</option>
-            <option value="SB">Solomon Islands</option>
-            <option value="SO">Somalia</option>
-            <option value="ZA">South Africa</option>
-            <option value="GS">South Georgia and the South Sandwich Islands</option>
-            <option value="SS">South Sudan</option>
-            <option value="ES">Spain</option>
-            <option value="LK">Sri Lanka</option>
-            <option value="SD">Sudan</option>
-            <option value="SR">Suriname</option>
-            <option value="SJ">Svalbard and Jan Mayen</option>
-            <option value="SZ">Swaziland</option>
-            <option value="SE">Sweden</option>
-            <option value="CH">Switzerland</option>
-            <option value="SY">Syrian Arab Republic</option>
-            <option value="TW">Taiwan, Province of China</option>
-            <option value="TJ">Tajikistan</option>
-            <option value="TZ">Tanzania, United Republic of</option>
-            <option value="TH">Thailand</option>
-            <option value="TL">Timor-Leste</option>
-            <option value="TG">Togo</option>
-            <option value="TK">Tokelau</option>
-            <option value="TO">Tonga</option>
-            <option value="TT">Trinidad and Tobago</option>
-            <option value="TN">Tunisia</option>
-            <option value="TR">Turkey</option>
-            <option value="TM">Turkmenistan</option>
-            <option value="TC">Turks and Caicos Islands</option>
-            <option value="TV">Tuvalu</option>
-            <option value="UG">Uganda</option>
-            <option value="UA">Ukraine</option>
-            <option value="AE">United Arab Emirates</option>
-            <option value="GB">United Kingdom</option>
-            <option value="US">United States</option>
-            <option value="UM">United States Minor Outlying Islands</option>
-            <option value="UY">Uruguay</option>
-            <option value="UZ">Uzbekistan</option>
-            <option value="VU">Vanuatu</option>
-            <option value="VE">Venezuela, Bolivarian Republic of</option>
-            <option value="VN">Viet Nam</option>
-            <option value="VG">Virgin Islands, British</option>
-            <option value="VI">Virgin Islands, U.S.</option>
-            <option value="WF">Wallis and Futuna</option>
-            <option value="EH">Western Sahara</option>
-            <option value="YE">Yemen</option>
-            <option value="ZM">Zambia</option>
-            <option value="ZW">Zimbabwe</option>
-          </select>
-        </div>
-
-        <label class="radio-tile-group" id="21"><h3 class="pt-3">Status</h3></label>
-        <div class="radio-tile-group" id="2">
-          <div class="col-md-4 col-6">
-            <input id="drive" class="radio-button" type="radio" value="1" name="student" />
-            <div class="radio-tile">
-              <div class="icon car-icon py-3 py-md-1">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M319.4 320.6L224 416l-95.4-95.4C57.1 323.7 0 382.2 0 454.4v9.6c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-9.6c0-72.2-57.1-130.7-128.6-133.8zM13.6 79.8l6.4 1.5v58.4c-7 4.2-12 11.5-12 20.3 0 8.4 4.6 15.4 11.1 19.7L3.5 242c-1.7 6.9 2.1 14 7.6 14h41.8c5.5 0 9.3-7.1 7.6-14l-15.6-62.3C51.4 175.4 56 168.4 56 160c0-8.8-5-16.1-12-20.3V87.1l66 15.9c-8.6 17.2-14 36.4-14 57 0 70.7 57.3 128 128 128s128-57.3 128-128c0-20.6-5.3-39.8-14-57l96.3-23.2c18.2-4.4 18.2-27.1 0-31.5l-190.4-46c-13-3.1-26.7-3.1-39.7 0L13.6 48.2c-18.1 4.4-18.1 27.2 0 31.6z"/>
-                </svg>
-              </div>
-              <label for="drive" class="radio-tile-label">Student</label>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-6">
-            <input id="fly" class="radio-button" type="radio" value="2" name="student" />
-            <div class="radio-tile">
-              <div class="icon fly-icon py-3 py-md-1">
-               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"/>
-               </svg>
-             </div>
-             <label for="fly" class="radio-tile-label">Non-student</label>
-           </div>
-         </div>
-       </div>
-<label class="radio-tile-group" id="31"><h3 class="pt-3">IEEE membership </h3></label>
-       <div class="radio-tile-group" id="3">
-        <div class="col-md-4 col-6">
-          <input id="drive" class="radio-button" type="radio" value="1" name="ieee" />
-          <div class="radio-tile">
-            <div class="icon car-icon py-3 py-md-1">
-             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zm323-128.4l-27.8-28.1c-4.6-4.7-12.1-4.7-16.8-.1l-104.8 104-45.5-45.8c-4.6-4.7-12.1-4.7-16.8-.1l-28.1 27.9c-4.7 4.6-4.7 12.1-.1 16.8l81.7 82.3c4.6 4.7 12.1 4.7 16.8.1l141.3-140.2c4.6-4.7 4.7-12.2.1-16.8z"/>
-             </svg>
-           </div>
-           <label for="drive" class="radio-tile-label">IEEE Member</label>
-         </div>
-       </div>
-
-       <div class="col-md-4 col-6">
-        <input id="fly" class="radio-button" type="radio" value="2" name="ieee" />
-        <div class="radio-tile">
-          <div class="icon fly-icon py-3 py-md-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M589.6 240l45.6-45.6c6.3-6.3 6.3-16.5 0-22.8l-22.8-22.8c-6.3-6.3-16.5-6.3-22.8 0L544 194.4l-45.6-45.6c-6.3-6.3-16.5-6.3-22.8 0l-22.8 22.8c-6.3 6.3-6.3 16.5 0 22.8l45.6 45.6-45.6 45.6c-6.3 6.3-6.3 16.5 0 22.8l22.8 22.8c6.3 6.3 16.5 6.3 22.8 0l45.6-45.6 45.6 45.6c6.3 6.3 16.5 6.3 22.8 0l22.8-22.8c6.3-6.3 6.3-16.5 0-22.8L589.6 240zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/>
-            </svg>
-          </div>
-          <label for="fly" class="radio-tile-label">Non-member</label>
-        </div>
       </div>
+      
     </div>
-    <div class="radio-tile-container">
-     <div class="radio-tile-group" id="numofpaper"  class="form-control">
-      <label class="radio-inline"><h3 class="pt-3">Amount of papers</h3>
-        <input type="text" class="form-control" name="numofpaper" id="text">
-      </label>
-    </div>
-    <div class="radio-tile-group mx-auto" id="btncount" class="form-control">
-      <input type="button" class="btn btn-success pull-left px-5 py-3" name="count" id="count" value="Count" data-toggle="modal">
-    </div><br>
-  </div>
-</div>
-</div>
-</div>
-</div></div>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container py-4" style="background-color: #f8f7fd;">
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <img src="../images/logos/ugm.svg" class="px-3 my-2" height="60px"><br>
-        <img src="../images/publication/ieee-logo.svg" class="px-3 my-2" height="50px">
-        <img src="../images/publication/ttp-logo.svg" class="px-3 my-2" height="50px">
-        <img src="../images/publication/scopus.svg" class="px-3 my-2" height="50px">
-        <!--<img src="./images/logos/e3s.svg" class="px-3 my-2" height="40px"> 
-      <img src="./images/logos/scientific net.svg" class="px-3 my-2" height="40px">
-      <img src="./images/logos/scopus.svg" class="px-3 my-2" height="40px">
-      <img src="./images/logos/ieee.svg" class="px-3 my-2" height="40px"> 
-      <img src="./images/logos/ijc.svg" class="px-3 my-2" height="40px">-->
-        <hr style="border-color: #e3e3f3; width: 80%;" class="mx-auto my-4">
-      </div>
-    </div>
-    <div class="row pt-2">
-      <div class="col-md-3">
-        <h5>The Conference</h5>
-        <p style="line-height: 2;">
-          <a href="about.html">About</a> <br>
-          <a href="venue.html">Venue</a> <br>
-          <a href="fees.html">Fees</a> <br>
-          <a href="symposia.html">Symposia</a> <br>
-          <!-- <a href="publications.html">Publications</a> <br> -->
-          <a href="downloads.html">Downloads</a>
-        </p>
-      </div>
-      <div class="col-md-3">
-        <h5>Connect</h5>
-        <p style="line-height: 2;">
-          <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>&nbsp;<a href="mailto:icst@ugm.ac.id">icst@ugm.ac.id</a><br>
-          <i class="fa fa-phone fa-fw" aria-hidden="true"></i>&nbsp;<a href="tel:+62-878-3052-8855">+62-878-3052-8855 (Lavi)</a><br />
-          <i class="fa fa-twitter fa-fw" aria-hidden="true"></i>&nbsp;<a target="_blank" href="https://twitter.com/icstugm">@icstugm</a><br>
-          <i class="fa fa-instagram fa-fw" aria-hidden="true"></i>&nbsp;<a target="_blank" href="https://instagram.com/icstugm">icstugm</a><br>
-          <i class="fa fa-flickr fa-fw" aria-hidden="true"></i>&nbsp;<a target="_blank" href="https://flic.kr/icst">icst</a><br>
-          <i class="fa fa-twitter fa-fw" aria-hidden="true"></i>&nbsp;<a target="_blank" href="https://twitter.com/BPP_UGM">@BPP_UGM</a><br>
-          <i class="fa fa-twitter fa-fw" aria-hidden="true"></i>&nbsp;<a target="_blank" href="https://twitter.com/UGMYogyakarta">@UGMYogyakarta</a>
-        </p>
-      </div>
-      <div class="col-md-3">
-        <h5>Explore</h5>
-        <p style="line-height: 2;">
-          <a href="about-ugm.html">Universitas Gadjah Mada</a> <br>
-          <a href="https://www.yogyes.com/">The city of Yogyakarta</a>
-          <a target="_blank" href="http://visitramayana.com//">Ramayana Ballet</a>
-        </p>
-        <h5>Media</h5>
-        <p style="line-height: 2;">
-          <!-- <a href="article/icst-2017-in-images-and-words.html">Relive the ICST 2019</a> -->
-          <a target="_blank" href="https://www.flickr.com/photos/icst/albums">Flickr</a><br>
-          <a target="_blank" href="https://www.youtube.com/channel/UCQU0DiHt6DhN3h9ojnBId7Q">Youtube</a>
-        </p>
-      </div>
-      <div class="col-md-3">
-        <p class="text-center">
-          <img src="../images/logos/logo.svg" class="mb-2" height="55px"> <br>
-        </p>
-        <p>
-          <b>Chairman:</b> Dr.Eng. Sunu Wibirama<br>
-          <b>Secretary:</b> Dr.Eng. Ahmad Kusumaatmaja<br>
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="container">
-        <hr class="mx-auto my-3" style="border-color: #e3e3f3; width: 80%;" />
-        <p class="text-muted text-justify">
-          The International Conference on Science and Technology 2019, organized by <a target="_blank" href="https://publikasi.ugm.ac.id/en/">BPP UGM</a>. Website developed by <a target="_blank" href="https://www.linkedin.com/in/rafieiy/">Rafieiy</a>, <a target="_blank" href="https://www.linkedin.com/in/wildan-ainurrahman-563948128/">Wildan A</a>, <a target="_blank" href="https://www.denaiguna.com/">Imama L</a>, and <a target="_blank" href="https://www.linkedin.com/in/nisa-kusumaningsih-906130116/">Nisa K</a>.
-          UGM and ICST logos © Universitas Gadjah Mada.
-          Website © 2019 Badan Penerbit dan Publikasi UGM under the <a target="_blank" href="https://github.com/bppugm/icst-2019/blob/master/LICENSE.md">MIT License</a>, based on <a target="_blank" href="https://github.com/jaybaeta/icst-2017">ICST 2017 Website</a> by <a target="_blank" href="https://github.com/jaybaeta/">Joaquim Baeta</a> with modification, using <a target="_blank" href="https://getbootstrap.com/docs/4.2/">Bootstrap 4.2.1</a>.
-          Website content is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>, except where otherwise noted.
-          Icons by <a target="_blank" href="http://fontawesome.io">Font Awesome</a>(by Dave Gandy; <a target="_blank" href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>; <a target="_blank" href="http://opensource.org/licenses/mit-license.html">MIT</a>), <a target="_blank" href="https://www.iconfinder.com/webalys">Webalys</a> (free for commercial use), <a target="_blank" href="https://www.iconfinder.com/bocatutor">Boca Tutor</a> (<a target="_blank" href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>), <a target="_blank" href="https://www.iconfinder.com/Sergt">Sergey Toropov</a> (free for commercial use), and Joaquim Baeta (<a target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).
-          Jumbotron background by <a target="_blank" href="https://www.linkedin.com/in/rafieiy/">Rafieiy</a> based on <a href="https://www.freepik.com/free-vector/halftone-texture-frame-with-text-space_2543378.htm">Starline</a> (free for comercial use).
-          Symposia images by <a target="_blank" href="https://flic.kr/p/NLBeFd">Ars Electronica</a> (<a target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a>), <a target="_blank" href="https://flic.kr/p/9773UW">Ched Cheddles</a> (<a target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a>), <a target="_blank" href="https://flic.kr/p/27f3hV5">Kreemerz</a> (<a target="_blank" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>), <a target="_blank" href="https://www.pexels.com/photo/two-test-tubes-954585/">Martin Lopez</a> (free for personal and commercial use), <a target="_blank" href="https://www.pexels.com/photo/gray-and-gold-steel-gears-159275/">Pixabay</a> (free for personal and commercial use), <a target="_blank" href="https://www.pexels.com/photo/people-in-boat-near-water-dam-1259924/">Ali Madad</a> (free for personal and commercial use), and <a target="_blank" href="https://flic.kr/p/UyzZWb">NASA's Marshall Space Flight Center</a> (<a target="_blank" href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>)
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
-</body>
-</html>
-
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-  <div class="modal-dialog modal-dialog-centered modal-md">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">RESULT</h4>
-        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container py-4" style="background-color: #f8f7fd;">
         <div class="row">
-          <div class="col-12">
-            <table class="table table-sm table-borderless" style="border: none;">
-              <tr>
-                <td>Type of participation</td>
-                <td><span id="varTypeOfPresenter"></span></td>
-              </tr>
-              <tr>
-                <td>Country</td>
-                <td><span id="varCountry"></span></td>
-              </tr>
-              <tr>
-                <td>Status</td>
-                <td><span id="varStatus"></span></td>
-              </tr>
-              <tr>
-                <td>IEEE Membership</td>
-                <td><span id="VarIeee"></span></td>
-              </tr>
-            </table>
+          <div class="col-sm-12 text-center">
+            <img src="../images/logos/ugm.svg" class="px-3 my-2" height="50px"><br>
+            <img src="../images/publication/ieee-logo.svg" class="px-3 my-2" height="50px">
+            <img src="../images/publication/ttp-logo.svg" class="px-3 my-2" height="50px">
+            <img src="../images/publication/iop-logo.svg" class="px-3 my-2" height="40px">
+            <img src="../images/publication/scopus.svg" class="px-3 my-2" height="50px">
+            <hr style="border-color: #e3e3f3; width: 80%;" class="mx-auto my-4">
+          </div>
+        </div>
+        <div class="row pt-2">
+          <div class="col-md-3">
+            <h5>The Conference</h5>
+            <p style="line-height: 2;">
+              <a href="about.html">About</a> <br>
+              <a href="venue.html">Venue</a> <br>
+              <a href="fees.html">Fees</a> <br>
+              <a href="symposia.html">Symposia</a> <br>
+              <a href="publications.html">Publications</a> <br>
+              <a href="downloads.html">Downloads</a>
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h5>Connect</h5>
+            <p style="line-height: 2;">
+              <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>&nbsp;<a href="mailto:icst@ugm.ac.id">icst@ugm.ac.id</a><br>
+              <i class="fa fa-phone fa-fw" aria-hidden="true"></i>&nbsp;<a href="tel:+62-878-3052-8855">+62-878-3052-8855 (Lavi)</a><br />
+              <i class="fa fa-twitter fa-fw" aria-hidden="true"></i>&nbsp;<a target="_blank" href="https://twitter.com/icstugm">@icstugm</a><br>
+              <i class="fa fa-instagram fa-fw" aria-hidden="true"></i>&nbsp;<a target="_blank" href="https://instagram.com/icstugm">icstugm</a><br>
+              <i class="fa fa-flickr fa-fw" aria-hidden="true"></i>&nbsp;<a target="_blank" href="https://flic.kr/icst">icst</a><br>
+              <i class="fa fa-twitter fa-fw" aria-hidden="true"></i>&nbsp;<a target="_blank" href="https://twitter.com/BPP_UGM">@BPP_UGM</a><br>
+              <i class="fa fa-twitter fa-fw" aria-hidden="true"></i>&nbsp;<a target="_blank" href="https://twitter.com/UGMYogyakarta">@UGMYogyakarta</a>
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h5>Explore</h5>
+            <p style="line-height: 2;">
+              <a href="about-ugm.html">Universitas Gadjah Mada</a> <br>
+              <a target="_blank" href="https://www.yogyes.com/">The city of Yogyakarta</a> <br>
+              <a target="_blank" href="http://visitramayana.com//">Ramayana Ballet</a>
+            </p>
+            <h5>Media</h5>
+            <p style="line-height: 2;">
+              <!-- <a href="article/icst-2017-in-images-and-words.html">Relive the ICST 2019</a> -->
+              <a target="_blank" href="https://www.flickr.com/photos/icst/albums">Flickr</a><br>
+              <a target="_blank" href="https://www.youtube.com/channel/UCQU0DiHt6DhN3h9ojnBId7Q">Youtube</a>
+            </p>
+          </div>
+          <div class="col-md-3">
+            <p class="text-center">
+              <img src="../images/logos/logo.svg" class="mb-2" height="55px"> <br>
+            </p>
+            <p>
+              <b>Chairman:</b> Dr.Eng. Sunu Wibirama<br>
+              <b>Secretary:</b> Dr.Eng. Ahmad Kusumaatmaja<br>
+              <b>Symposia coordinator:</b><br />
+              Dr. Andi Dharmawan<br />
+              Dr. I Wayan Mustika<br />
+              Dr. Ratih Fitria Putri<br />
+              Dr. Tutik Dwi Wahyuningsih<br />
+              Dr.Eng. Titis Wijayanto<br />
+              Dr. Pramaditya Wicaksono<br />
+              Dr. Lesnanto Multa Putranto
+            </p>
           </div>
         </div>
         <div class="row">
-          <div class="col-12">
-            <p>You are going to present <b><span id="n"></span></b> of your paper(s) at the ICST 2018.</p>
-            <div style="margin-left: auto; margin-right: auto;">
-              <table class="table table-hover col-12 table-bordered table-responsive mx-auto" style="border-color: #1d73cc;">
+          <div class="container">
+            <hr class="mx-auto my-3" style="border-color: #e3e3f3; width: 80%;" />
+            <p class="text-muted text-justify">
+              The International Conference on Science and Technology 2019, organized by <a target="_blank" href="https://publikasi.ugm.ac.id/en/">BPP UGM</a>. Website developed by <a target="_blank" href="https://www.linkedin.com/in/rafieiy/">Rafieiy</a>, <a target="_blank" href="https://www.linkedin.com/in/wildan-ainurrahman-563948128/">Wildan A</a>, <a target="_blank" href="https://www.denaiguna.com/">Imama L</a>, and <a target="_blank" href="https://www.linkedin.com/in/nisa-kusumaningsih-906130116/">Nisa K</a>.
+              UGM and ICST logos © Universitas Gadjah Mada.
+              Website © 2019 Badan Penerbit dan Publikasi UGM under the <a target="_blank" href="https://github.com/bppugm/icst-2019/blob/master/LICENSE.md">MIT License</a>, based on <a target="_blank" href="https://github.com/jaybaeta/icst-2017">ICST 2017 Website</a> by <a target="_blank" href="https://github.com/jaybaeta/">Joaquim Baeta</a> with modification, using <a target="_blank" href="https://getbootstrap.com/docs/4.2/">Bootstrap 4.2.1</a>.
+              Website content is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>, except where otherwise noted.
+              Icons by <a target="_blank" href="http://fontawesome.io">Font Awesome</a>(by Dave Gandy; <a target="_blank" href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>; <a target="_blank" href="http://opensource.org/licenses/mit-license.html">MIT</a>), <a target="_blank" href="https://www.iconfinder.com/webalys">Webalys</a> (free for commercial use), <a target="_blank" href="https://www.iconfinder.com/bocatutor">Boca Tutor</a> (<a target="_blank" href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>), <a target="_blank" href="https://www.iconfinder.com/Sergt">Sergey Toropov</a> (free for commercial use), and Joaquim Baeta (<a target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).
+              Jumbotron background by <a target="_blank" href="https://www.linkedin.com/in/rafieiy/">Rafieiy</a> based on <a href="https://www.freepik.com/free-vector/halftone-texture-frame-with-text-space_2543378.htm">Starline</a> (free for comercial use).
+              Symposia images by <a target="_blank" href="https://flic.kr/p/NLBeFd">Ars Electronica</a> (<a target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a>), <a target="_blank" href="https://flic.kr/p/9773UW">Ched Cheddles</a> (<a target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a>), <a target="_blank" href="https://flic.kr/p/27f3hV5">Kreemerz</a> (<a target="_blank" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>), <a target="_blank" href="https://www.pexels.com/photo/two-test-tubes-954585/">Martin Lopez</a> (free for personal and commercial use), <a target="_blank" href="https://www.pexels.com/photo/gray-and-gold-steel-gears-159275/">Pixabay</a> (free for personal and commercial use), <a target="_blank" href="https://www.pexels.com/photo/people-in-boat-near-water-dam-1259924/">Ali Madad</a> (free for personal and commercial use), and <a target="_blank" href="https://flic.kr/p/UyzZWb">NASA's Marshall Space Flight Center</a> (<a target="_blank" href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>)
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  </html>
+  
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">RESULT</h4>
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12">
+              <table class="table table-sm table-borderless" style="border: none;">
+                <tr>
+                  <td>Type of participation</td>
+                  <td><span id="varTypeOfPresenter"></span></td>
+                </tr>
+                <tr>
+                  <td>Country</td>
+                  <td><span id="varCountry"></span></td>
+                </tr>
+                <tr>
+                  <td>Status</td>
+                  <td><span id="varStatus"></span></td>
+                </tr>
+                <tr>
+                  <td>IEEE Membership</td>
+                  <td><span id="VarIeee"></span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p>You are going to present <b><span id="n"></span></b> of your paper(s) at the ICST 2019.</p>
+              <div style="margin-left: auto; margin-right: auto;">
+                <table class="table table-hover col-12 table-bordered table-responsive mx-auto" style="border-color: #1d73cc;">
+                  <thead>
+                    <tr style="background-color:#1d73cc; color: white;">
+                      <th>Description</th>
+                      <th class="text-center">Unit</th>
+                      <th class="text-center" style="width: 132px;">Rate</th>
+                      <th class="text-center"  style="width: 132px;">Subtotal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>First paper</td>
+                      <td class="text-center">1</td>
+                      <td class="text-center"><span id="a"></span></td>
+                      <td class="text-center"><span id="b"></span></td>
+                    </tr>
+                    <tr>
+                      <td>Additional paper(s)</td>
+                      <td class="text-center"><span id="c"></span></td>
+                      <td class="text-center"><span id="d"></span></td>
+                      <td class="text-center"><span id="e"></span></td>
+                    </tr>
+                    <tr style="background-color: #d9edf7;">
+                      <td colspan="3" style="text-align: right;"><b style="margin-right: 40px;">Total<i style="color: red;">*</i></b></td>
+                      <td><center><span id="f" style="text-align: center;"></span></center></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          
+          <p><i style="color: red;">*</i>Please pay the conference fee before <b>6 July 2019</b>.</p>
+          <div class="alert alert-info" style="color: black;">
+            <p>You can get an early-bird discount of <span id="g"></span> if you pay earlier than <b>28 June 2019</b>. So, you only need to pay for <span id="h"></span>.</p>
+          </div>
+          
+          <!-- <p>Please carefully read the payment procedure at <a href="http://icst.ugm.ac.id/2018/article/payment-procedure.html">http://icst.ugm.ac.id/2018/article/payment-procedure.html</a></p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary pull-left" onclick="show(); printJS('print-area', 'html')"><i class="fa fa-print"></i> Print</button>
+          <button type="button" class="btn btn-secondary" onclick="hide()" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+      <!-- Modal footer -->
+      
+    </div>
+  </div>
+  
+  <!-- printable area presenter -->
+  <div class="modal-body" id="print-area">
+    <h1 class="modal-title">RESULT</h1>
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-sm table-borderless">
+          <tr>
+            <td style="border: none;">Type of participation</td>
+            <td style="border: none;"><span id="varTypeOfPresenterP"></span></td>
+            <td style="border: none; width: 400px;"></td>
+          </tr>
+          <tr>
+            <td style="border: none;">Country</td>
+            <td style="border: none;"><span id="varCountryP"></span></td>
+            <td style="border: none; width: 400px;"></td>
+          </tr>
+          <tr>
+            <td style="border: none;">Status</td>
+            <td style="border: none;"><span id="varStatusP"></span></td>
+            <td style="border: none; width: 400px;"></td>
+          </tr>
+          <tr>
+            <td style="border: none;">IEEE Membership</td>
+            <td style="border: none;"><span id="VarIeeeP"></span></td>
+            <td style="border: none; width: 400px;"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class=" col-12">
+        <p>You are going to present <b><span id="nP"></span></b> of your paper(s) at the ICST 2019.</p>
+        <table class="table table-lg table-bordered  mx-auto" style="border: none;">
+          <thead  style="background-color:#1d73cc; color: white;">
+            <tr>
+              <th style="border-bottom: 2px solid #1d73cc; border-right: none; border-left: none; border-top: none;">Description</th>
+              <th style="border-bottom: 2px solid #1d73cc; border-right: none; border-left: none; border-top: none;" class="text-center">Unit</th>
+              <th style="border-bottom: 2px solid #1d73cc; border-right: none; border-left: none; border-top: none;" class="text-center">Rate</th>
+              <th style="border-bottom: 2px solid #1d73cc; border-right: none; border-left: none; border-top: none;" class="text-center">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;">First paper</td>
+              <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center>1</center></td>
+              <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center><span id="aP"></span></center></td>
+              <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center><span id="bP"></span></center></td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;">Additional paper(s)</td>
+              <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center><span id="cP"></span></center></td>
+              <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center><span id="dP"></span></center></td>
+              <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center><span id="eP"></span></center></td>
+            </tr>
+            <tr style="background-color: #d9edf7;">
+              <td style="border-bottom: none; border-right: none; border-left: none;"></td>
+              <td style="border-bottom: none; border-right: none; border-left: none;"></td>
+              <td style="border-bottom: none; border-right: none; border-left: none;"><center><b>Total<i style="color: red;">*</i></b></center></td>
+              <td style="border-bottom: none; border-right: none; border-left: none;"><center><b><span id="fP"></span></b></center></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <p><i style="color: red;">*</i>Please pay the conference fee before <b>6 July 2019</b>.</p>
+    <div class="alert alert-info" style="color: black;">
+      <p>You can get an early-bird discount of <span id="gP"></span> if you pay earlier than <b>28 June 2019</b>. So, you only need to pay for <span id="hP"></span>.</p>
+    </div>
+    
+    <!-- <p>Please carefully read the payment procedure at <a href="http://icst.ugm.ac.id/2018/article/payment-procedure.html">http://icst.ugm.ac.id/2018/article/payment-procedure.html</a></p> -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>This document does not act as a valid invoice. It only helps you to know the total amount to be paid.</p>
+  </div>
+  <!-- end printable area -->
+  
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal2">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">RESULT</h4>
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="row">
+            <div class=" col-12">
+              <table class="table table-sm table-borderless" style="border: none;">
+                <tr>
+                  <td>Type of participation</td>
+                  <td><span id="varTypeOfPresenter2"></span></td>
+                </tr>
+                <tr>
+                  <td>Country</td>
+                  <td><span id="varCountry2"></span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <br>
+              <table class="table table-hover table-bordered col-md-12 mx-auto" style="border-color: #1d73cc;">
                 <thead>
                   <tr style="background-color:#1d73cc; color: white;">
                     <th>Description</th>
-                    <th class="text-center">Unit</th>
-                    <th class="text-center" style="width: 132px;">Rate</th>
-                    <th class="text-center"  style="width: 132px;">Subtotal</th>
+                    <th class="text-center" style="width: 100px;"></th>
+                    <th class="text-center">Subtotal</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>First paper</td>
-                    <td class="text-center">1</td>
-                    <td class="text-center"><span id="a"></span></td>
-                    <td class="text-center"><span id="b"></span></td>
-                  </tr>
-                  <tr>
-                    <td>Additional paper(s)</td>
-                    <td class="text-center"><span id="c"></span></td>
-                    <td class="text-center"><span id="d"></span></td>
-                    <td class="text-center"><span id="e"></span></td>
+                    <td>Conference fee</td>
+                    <td class="text-center"></td>
+                    <td class="text-center"><span id="b2"></span></td>
                   </tr>
                   <tr style="background-color: #d9edf7;">
-                    <td colspan="3" style="text-align: right;"><b style="margin-right: 40px;">Total<i style="color: red;">*</i></b></td>
-                    <td><center><span id="f" style="text-align: center;"></span></center></td>
+                    <td></td>
+                    <td style="text-align: right;"><center><b>Total<i style="color: red;">*</i></b></center></td>
+                    <td style="text-align: center;"><b><span id="f2"></span></b></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-        </div>
-
-        <p><i style="color: red;">*</i> Please pay the conference fee before <b>June 30</b>.</p>
-        <div class="alert alert-info" style="color: black;">
-          <p>You can get an early-bird discount of <span id="g"></span> if you pay earlier than <b>14 June 2019</b>. So, you only need to pay for <span id="h"></span>.</p>
-        </div>
-
-        <!-- <p>Please carefully read the payment procedure at <a href="http://icst.ugm.ac.id/2018/article/payment-procedure.html">http://icst.ugm.ac.id/2018/article/payment-procedure.html</a></p> -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary pull-left" onclick="show(); printJS('print-area', 'html')"><i class="fa fa-print"></i> Print</button>
-        <button type="button" class="btn btn-secondary" onclick="hide()" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-    <!-- Modal footer -->
-
-  </div>
-</div>
-
-<!-- printable area presenter -->
-<div class="modal-body" id="print-area">
-  <h1 class="modal-title">RESULT</h1>
-  <div class="row">
-    <div class="col-12">
-      <table class="table table-sm table-borderless">
-        <tr>
-          <td style="border: none;">Type of participation</td>
-          <td style="border: none;"><span id="varTypeOfPresenterP"></span></td>
-          <td style="border: none; width: 400px;"></td>
-        </tr>
-        <tr>
-          <td style="border: none;">Country</td>
-          <td style="border: none;"><span id="varCountryP"></span></td>
-          <td style="border: none; width: 400px;"></td>
-        </tr>
-        <tr>
-          <td style="border: none;">Status</td>
-          <td style="border: none;"><span id="varStatusP"></span></td>
-          <td style="border: none; width: 400px;"></td>
-        </tr>
-        <tr>
-          <td style="border: none;">IEEE Membership</td>
-          <td style="border: none;"><span id="VarIeeeP"></span></td>
-          <td style="border: none; width: 400px;"></td>
-        </tr>
-      </table>
-    </div>
-  </div>
-  <div class="row">
-    <div class=" col-12">
-      <p>You are going to present <b><span id="nP"></span></b> of your paper(s) at the ICST 2018.</p>
-      <table class="table table-lg table-bordered  mx-auto" style="border: none;">
-        <thead  style="background-color:#1d73cc; color: white;">
-          <tr>
-            <th style="border-bottom: 2px solid #1d73cc; border-right: none; border-left: none; border-top: none;">Description</th>
-            <th style="border-bottom: 2px solid #1d73cc; border-right: none; border-left: none; border-top: none;" class="text-center">Unit</th>
-            <th style="border-bottom: 2px solid #1d73cc; border-right: none; border-left: none; border-top: none;" class="text-center">Rate</th>
-            <th style="border-bottom: 2px solid #1d73cc; border-right: none; border-left: none; border-top: none;" class="text-center">Subtotal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;">First paper</td>
-            <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center>1</center></td>
-            <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center><span id="aP"></span></center></td>
-            <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center><span id="bP"></span></center></td>
-          </tr>
-          <tr>
-            <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;">Additional paper(s)</td>
-            <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center><span id="cP"></span></center></td>
-            <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center><span id="dP"></span></center></td>
-            <td style="border-bottom: 1px solid #1d73cc; border-right: none; border-left: none;"><center><span id="eP"></span></center></td>
-          </tr>
-          <tr style="background-color: #d9edf7;">
-            <td style="border-bottom: none; border-right: none; border-left: none;"></td>
-            <td style="border-bottom: none; border-right: none; border-left: none;"></td>
-            <td style="border-bottom: none; border-right: none; border-left: none;"><center><b>Total<i style="color: red;">*</i></b></center></td>
-            <td style="border-bottom: none; border-right: none; border-left: none;"><center><b><span id="fP"></span></b></center></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <p><i style="color: red;">*</i>Please pay the conference fee before <b>June 30</b>.</p>
-  <div class="alert alert-info" style="color: black;">
-    <p>You can get an early-bird discount of <span id="gP"></span> if you pay earlier than <b>14 June 2019</b>. So, you only need to pay for <span id="hP"></span>.</p>
-  </div>
-
-  <!-- <p>Please carefully read the payment procedure at <a href="http://icst.ugm.ac.id/2018/article/payment-procedure.html">http://icst.ugm.ac.id/2018/article/payment-procedure.html</a></p> -->
-  <br>
-  <br>
-  <br>
-  <br>
-  <p>This document does not act as a valid invoice. It only helps you to know the total amount to be paid.</p>
-</div>
-<!-- end printable area -->
-
-<!-- The Modal -->
-<div class="modal fade" id="myModal2">
-  <div class="modal-dialog modal-dialog-centered modal-md">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">RESULT</h4>
-        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <div class="row">
-          <div class=" col-12">
-            <table class="table table-sm table-borderless" style="border: none;">
-              <tr>
-                <td>Type of participation</td>
-                <td><span id="varTypeOfPresenter2"></span></td>
-              </tr>
-              <tr>
-                <td>Country</td>
-                <td><span id="varCountry2"></span></td>
-              </tr>
-            </table>
+          
+          <p><i style="color: red;">*</i>Please pay the conference fee before <b>6 July 2019</b>.</p>
+          <div class="alert alert-info" style="color: black;">
+            <p>You can get an early-bird discount of <span id="g2"></span> if you pay earlier than <b>28 June 2019</b>. So, you only need to pay for <span id="h2"></span>.</p>
           </div>
+          
+          <!-- <p>Please carefully read the payment procedure at <a href="http://icst.ugm.ac.id/2018/article/payment-procedure.html">http://icst.ugm.ac.id/2018/article/payment-procedure.html</a></p> -->
         </div>
-        <div class="row">
-          <div class="col-12">
-            <br>
-            <table class="table table-hover table-bordered col-md-12 mx-auto" style="border-color: #1d73cc;">
-              <thead>
-                <tr style="background-color:#1d73cc; color: white;">
-                  <th>Description</th>
-                  <th class="text-center" style="width: 100px;"></th>
-                  <th class="text-center">Subtotal</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Conference fee</td>
-                  <td class="text-center"></td>
-                  <td class="text-center"><span id="b2"></span></td>
-                </tr>
-                <tr style="background-color: #d9edf7;">
-                  <td></td>
-                  <td style="text-align: right;"><center><b>Total<i style="color: red;">*</i></b></center></td>
-                  <td style="text-align: center;"><b><span id="f2"></span></b></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary pull-left" onclick="show(); printJS('print-area-non', 'html');"><i class="fa fa-print"></i> Print</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="hide()">Close</button>
         </div>
-
-        <p><i style="color: red;">*</i>Please pay the conference fee before <b>June 30</b>.</p>
-        <div class="alert alert-info" style="color: black;">
-          <p>You can get an early-bird discount of <span id="g2"></span> if you pay earlier than <b>14 June 2019</b>. So, you only need to pay for <span id="h2"></span>.</p>
-        </div>
-
-        <!-- <p>Please carefully read the payment procedure at <a href="http://icst.ugm.ac.id/2018/article/payment-procedure.html">http://icst.ugm.ac.id/2018/article/payment-procedure.html</a></p> -->
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary pull-left" onclick="show(); printJS('print-area-non', 'html');"><i class="fa fa-print"></i> Print</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="hide()">Close</button>
-      </div>
+      
+      <!-- Modal footer -->
+      
     </div>
-
-    <!-- Modal footer -->
-
   </div>
-</div>
 </div>
 
 <!-- Printable area non-presenter -->
@@ -1149,12 +1311,12 @@
       </table>
     </div>
   </div>
-
-  <p><i style="color: red;">*</i>Please pay the conference fee before <b>June 30</b>.</p>
+  
+  <p><i style="color: red;">*</i>Please pay the conference fee before <b>6 July 2019</b>.</p>
   <div class="alert alert-info" style="color: black;">
-    <p>You can get an early-bird discount of <span id="g2P"></span> if you pay earlier than <b>14 June 2019</b>. So, you only need to pay for <span id="h2P"></span>.</p>
+    <p>You can get an early-bird discount of <span id="g2P"></span> if you pay earlier than <b>28 June 2019</b>. So, you only need to pay for <span id="h2P"></span>.</p>
   </div>
-
+  
   <!-- <p>Please carefully read the payment procedure at <a href="http://icst.ugm.ac.id/2018/article/payment-procedure.html">http://icst.ugm.ac.id/2018/article/payment-procedure.html</a></p> -->
   <br>
   <br>
@@ -1164,6 +1326,370 @@
 </div>
 <!-- end printable area non-presenter -->
 
-<!-- CALCULATOR SCRIPT -->
 <script type="text/javascript" src="../javascripts/jquery.formatCurrency-1.4.0.js"></script>
-<script type="text/javascript" src="../javascripts/calc.js"></script>
+<script type="text/javascript">
+  function show(){
+    $('#print-area-non').show();
+    $('#print-area').show();
+  }
+  function hide(){
+    $('#print-area-non').hide();
+    $('#print-area').hide();
+  }
+  $('#print-area-non').hide();
+  $('#print-area').hide();
+  $('#count').click(function(){
+    var presenter = parseInt($('input[name="presenter"]:checked').val());//presenter
+    var from = $('#1 :selected').val();//presenter no
+    var from2 = $('#12 :selected').val(); //presenter yes
+    var student = parseInt($('input[name="student"]:checked').val());
+    var ieee = parseInt($('input[name="ieee"]:checked').val());
+    var numofpaper = $('#text').val();
+    if(numofpaper == 1){
+      $("#n").text('one');
+      $("#nP").text('one');
+    }else if(numofpaper == 2){
+      $("#n").text('two');
+      $("#nP").text('two');
+    }else if(numofpaper == 3){
+      $("#n").text('three');
+      $("#nP").text('three');
+    }else if(numofpaper == 4){
+      $("#n").text('four');
+      $("#nP").text('four');
+    }else if(numofpaper == 5){
+      $("#n").text('five');
+      $("#nP").text('five');
+    }else if(numofpaper == 6){
+      $("#n").text('six');
+      $("#nP").text('six');
+    }else if(numofpaper == 7){
+      $("#n").text('seven');
+      $("#nP").text('seven');
+    }else if(numofpaper == 8){
+      $("#n").text('eight');
+      $("#nP").text('eight');
+    }else if(numofpaper == 9){
+      $("#n").text('nine');
+      $("#nP").text('nine');
+    }else if(numofpaper == 10){
+      $("#n").text('ten');
+      $("#nP").text('ten');
+    }else{
+      $("#n").text(numofpaper);
+      $("#nP").text(numofpaper);
+    }
+    
+    var f1 = 3000000;
+    var f2 = 3500000;
+    var f3 = f1;
+    var f4 = f2;
+    var f5 = 250;
+    var f6 = f5;
+    var f7 = 300;
+    var f8 = f7;
+    var f9 = 1500000;
+    var f10 = 150;
+    
+    var a1 = 1500000;
+    var a2 = 2000000;
+    var a3 = a1;
+    var a4 = a2;
+    var a5 = 100;
+    var a6 = a5;
+    var a7 = 150;
+    var a8 = a7;
+    
+    var e1 = 1000000;
+    var e2 = e1;
+    var e3 = e1;
+    var e4 = e1;
+    var e5 = 50;
+    var e6 = e5;
+    var e7 = e5;
+    var e8 = e5;
+    var e9 = 500000;
+    var e10 = e5;    
+    
+    if(presenter == 1){
+      $("#varTypeOfPresenter").text(": Presenter");
+      $("#varTypeOfPresenterP").text(": Presenter");
+    }else{
+      $("#varTypeOfPresenter2").text(": Non-presenter");
+      $("#varTypeOfPresenter2P").text(": Non-presenter");
+    }
+    
+    var from2 = $('#12 :selected').text(); //presenter yes
+    $("#varCountry").text(": "+from2);
+    $("#varCountryP").text(": "+from2);
+    
+    
+    var from = $('#1 :selected').text(); //presenter no
+    $("#varCountry2").text(": "+from);
+    $("#varCountry2P").text(": "+from);
+    
+    if(student == 1){
+      $("#varStatus").text(": Student");
+      $("#varStatusP").text(": Student");
+    }else{
+      $("#varStatus").text(": Non-student");
+      $("#varStatusP").text(": Non-student");
+    }
+    
+    if(ieee == 1){
+      $("#VarIeee").text(": Member");
+      $("#VarIeeeP").text(": Member");
+    }else{
+      $("#VarIeee").text(": Non-member");
+      $("#VarIeeeP").text(": Non-member");
+    }
+    
+    
+    if(presenter != 1 && presenter != 2){
+      $('#costearly').val('');
+      $('#costreg').val(''); 
+      alert("You have not selected the 'type of participation'. Please complete the form to continue.");
+      return false;
+    }else if(presenter == 1){
+      if(student !=1 && student !=2){
+        $('#costearly').val('');
+        $('#costreg').val(''); 
+        alert("You haven't selected the 'status'. Please complete the form to continue.");
+        return false;
+      }else if(ieee !=1 && ieee !=2){
+        $('#costearly').val('');
+        $('#costreg').val(''); 
+        alert("You haven't selected the 'IEEE membership'. Please complete the form to continue.");
+        return false;
+      }else if ( numofpaper == '') {
+        $('#costearly').val('');
+        $('#costreg').val(''); 
+        alert("You have not entered the 'Numbers of Papers'. Please complete the form to continue.");
+        return false;
+      }
+    }
+    
+    if(presenter == 2){//no
+      if(from == 'Indonesia'){ //yes
+        $("#b2").text(f9).formatCurrency();
+        $("#f2").text(f9).formatCurrency();
+        $("#g2").text(e9).formatCurrency();
+        $("#h2").text(f9-e9).formatCurrency();
+        // Print
+        $("#b2P").text(f9).formatCurrency();
+        $("#f2P").text(f9).formatCurrency();
+        $("#g2P").text(e9).formatCurrency();
+        $("#h2P").text(f9-e9).formatCurrency();
+      }else{ //no
+        if(from != 'Indonesia'){
+          var h2 = f10-e10;
+          $("#b2").text('USD' + f10);
+          $("#f2").text('USD' + f10);
+          $("#g2").text('USD' + e10);
+          $("#h2").text('USD' + h2);
+          // Print
+          $("#b2P").text('USD' + f10);
+          $("#f2P").text('USD' + f10);
+          $("#g2P").text('USD' + e10);
+          $("#h2P").text('USD' + h2);
+        }
+      } 
+    }else{
+      
+      if (presenter == 1 && numofpaper != ''){ //yes
+        if(from2 == 'Indonesia' && numofpaper != ''){
+          if(student == 1 && numofpaper != ''){ //yes
+            if(ieee == 1 && numofpaper != ''){
+              $("#a").text(f1).formatCurrency();
+              $("#b").text(f1).formatCurrency();
+              $("#c").text((numofpaper-1));
+              $("#d").text(a1).formatCurrency();
+              $("#e").text(((numofpaper-1)*a1)).formatCurrency();
+              $("#f").text(f1+((numofpaper-1)*a1)).formatCurrency();
+              $("#g").text(e1).formatCurrency();
+              $("#h").text((f1+((numofpaper-1)*a1))-e1).formatCurrency();
+              // print
+              $("#aP").text(f1).formatCurrency();
+              $("#bP").text(f1).formatCurrency();
+              $("#cP").text((numofpaper-1));
+              $("#dP").text(a1).formatCurrency();
+              $("#eP").text(((numofpaper-1)*a1)).formatCurrency();
+              $("#fP").text(f1+((numofpaper-1)*a1)).formatCurrency();
+              $("#gP").text(e1).formatCurrency();
+              $("#hP").text((f1+((numofpaper-1)*a1))-e1).formatCurrency();
+            }else if (ieee == 2 && numofpaper != ''){
+              $("#a").text(f2).formatCurrency();
+              $("#b").text(f2).formatCurrency();
+              $("#c").text((numofpaper-1));
+              $("#d").text(a2).formatCurrency();
+              $("#e").text(((numofpaper-1)*a2)).formatCurrency();
+              $("#f").text(f2+((numofpaper-1)*a2)).formatCurrency();
+              $("#g").text(e2).formatCurrency();
+              $("#h").text((f2+((numofpaper-1)*a2))-e2).formatCurrency();
+              // Print
+              $("#aP").text(f2).formatCurrency();
+              $("#bP").text(f2).formatCurrency();
+              $("#cP").text((numofpaper-1));
+              $("#dP").text(a2).formatCurrency();
+              $("#eP").text(((numofpaper-1)*a2)).formatCurrency();
+              $("#fP").text(f2+((numofpaper-1)*a2)).formatCurrency();
+              $("#gP").text(e2).formatCurrency();
+              $("#hP").text((f2+((numofpaper-1)*a2))-e2).formatCurrency();
+            }
+          }else if (student == 2 && numofpaper != ''){ //no
+            if(ieee == 1 && numofpaper != ''){
+              $("#a").text(f3).formatCurrency();
+              $("#b").text(f3).formatCurrency();
+              $("#c").text((numofpaper-1));
+              $("#d").text(a3).formatCurrency();
+              $("#e").text(((numofpaper-1)*a3)).formatCurrency();
+              $("#f").text(f3+((numofpaper-1)*a3)).formatCurrency();
+              $("#g").text(e3).formatCurrency();
+              $("#h").text((f3+((numofpaper-1)*a3))-e3).formatCurrency(); 
+              // Print
+              $("#aP").text(f3).formatCurrency();
+              $("#bP").text(f3).formatCurrency();
+              $("#cP").text((numofpaper-1));
+              $("#dP").text(a3).formatCurrency();
+              $("#eP").text(((numofpaper-1)*a3)).formatCurrency();
+              $("#fP").text(f3+((numofpaper-1)*a3)).formatCurrency();
+              $("#gP").text(e3).formatCurrency();
+              $("#hP").text((f3+((numofpaper-1)*a3))-e3).formatCurrency(); 
+            }else if (ieee == 2 && numofpaper != ''){
+              $("#a").text(f4).formatCurrency();
+              $("#b").text(f4).formatCurrency();
+              $("#c").text((numofpaper-1));
+              $("#d").text(a4).formatCurrency();
+              $("#e").text(((numofpaper-1)*a4)).formatCurrency();
+              $("#f").text(f4+((numofpaper-1)*a4)).formatCurrency();
+              $("#g").text(e4).formatCurrency();
+              $("#h").text((f4+((numofpaper-1)*a4))-e4).formatCurrency();
+              // Print
+              $("#aP").text(f4).formatCurrency();
+              $("#bP").text(f4).formatCurrency();
+              $("#cP").text((numofpaper-1));
+              $("#dP").text(a4).formatCurrency();
+              $("#eP").text(((numofpaper-1)*a4)).formatCurrency();
+              $("#fP").text(f4+((numofpaper-1)*a4)).formatCurrency();
+              $("#gP").text(e4).formatCurrency();
+              $("#hP").text((f4+((numofpaper-1)*a4))-e4).formatCurrency();
+            }
+          }
+        }else if (from2 != 'Indonesia' && numofpaper != ''){ //no
+          if(student == 1 && numofpaper != ''){ //yes
+            if(ieee == 1 && numofpaper != ''){
+              var e = (numofpaper-1)*a5;
+              var f = f5+((numofpaper-1)*a5);
+              var h = (f5+((numofpaper-1)*a5))-e5;
+              
+              $("#a").text('USD'+f5);
+              $("#b").text('USD'+f5);
+              $("#c").text((numofpaper-1));
+              $("#d").text('USD'+a5);
+              $("#e").text('USD'+ e);
+              $("#f").text('USD'+ f);
+              $("#g").text('USD'+e5);
+              $("#h").text('USD'+ h);
+              // Print
+              $("#aP").text('USD'+f5);
+              $("#bP").text('USD'+f5);
+              $("#cP").text((numofpaper-1));
+              $("#dP").text('USD'+a5);
+              $("#eP").text('USD'+ e);
+              $("#fP").text('USD'+ f);
+              $("#gP").text('USD'+e5);
+              $("#hP").text('USD'+ h);
+            }else if (ieee == 2 && numofpaper != ''){
+              var e = (numofpaper-1)*a6;
+              var f = f6+((numofpaper-1)*a6);
+              var h = (f6+((numofpaper-1)*a6))-e6;
+              
+              $("#a").text('USD'+f6);
+              $("#b").text('USD'+f6);
+              $("#c").text((numofpaper-1));
+              $("#d").text('USD'+a6);
+              $("#e").text('USD'+ e);
+              $("#f").text('USD'+ f);
+              $("#g").text('USD'+e6);
+              $("#h").text('USD'+ h);
+              // Print
+              $("#aP").text('USD'+f6);
+              $("#bP").text('USD'+f6);
+              $("#cP").text((numofpaper-1));
+              $("#dP").text('USD'+a6);
+              $("#eP").text('USD'+ e);
+              $("#fP").text('USD'+ f);
+              $("#gP").text('USD'+e6);
+              $("#hP").text('USD'+ h);
+            }
+          }else if (student == 2 && numofpaper != ''){ //no
+            if(ieee == 1 && numofpaper != ''){
+              var e = (numofpaper-1)*a7;
+              var f = f7+((numofpaper-1)*a7);
+              var h = (f7+((numofpaper-1)*a7))-e7;
+              
+              $("#a").text('USD'+f7);
+              $("#b").text('USD'+f7);
+              $("#c").text((numofpaper-1));
+              $("#d").text('USD'+a7);
+              $("#e").text('USD'+ e);
+              $("#f").text('USD'+ f);
+              $("#g").text('USD'+ e7);
+              $("#h").text('USD'+ h);
+              // Print
+              $("#aP").text('USD'+f7);
+              $("#bP").text('USD'+f7);
+              $("#cP").text((numofpaper-1));
+              $("#dP").text('USD'+a7);
+              $("#eP").text('USD'+ e);
+              $("#fP").text('USD'+ f);
+              $("#gP").text('USD'+ e7);
+              $("#hP").text('USD'+ h);
+            }else if (ieee == 2 && numofpaper != ''){
+              var e = (numofpaper-1)*a8;
+              var f = f8+((numofpaper-1)*a8);
+              var h = (f8+((numofpaper-1)*a8))-e8;
+              
+              $("#a").text('USD'+f8);
+              $("#b").text('USD'+f8);
+              $("#c").text((numofpaper-1));
+              $("#d").text('USD'+a8);
+              $("#e").text('USD'+ e);
+              $("#f").text('USD'+ f);
+              $("#g").text('USD'+e8);
+              $("#h").text('USD'+ h);
+              // Print
+              $("#aP").text('USD'+f8);
+              $("#bP").text('USD'+f8);
+              $("#cP").text((numofpaper-1));
+              $("#dP").text('USD'+a8);
+              $("#eP").text('USD'+ e);
+              $("#fP").text('USD'+ f);
+              $("#gP").text('USD'+e8);
+              $("#hP").text('USD'+ h);
+            }
+          }
+        }
+      }
+    }
+    
+  });
+  
+  $(function(){
+    $("#1,#11,#111").hide();
+    $("input:radio#presenterno").click(function(){
+      $("#2,#21,#3,#31,#numofpaper, #12,#121,#122").hide();
+      $("#1,#11,#111").show();
+      // alert("iki alert cuk");
+      $("#count").attr('data-target', '#myModal2');
+    });
+    $("input:radio#presenteryes").click(function(){
+      $("#1,#11,#111").hide();
+      $('#costreg').val('');
+      $('#costearly').val('');
+      $("#2,#21,#3,#31,#12,#121,#122,#btncount, #numofpaper").show();
+      $("#count").removeAttr('data-target', '#myModal2');
+      $("#count").attr('data-target', '#myModal');
+    })
+  });
+</script>
